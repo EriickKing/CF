@@ -1,0 +1,119 @@
+@import "../../../sass/mixin";
+@import "../../../sass/variable";
+
+.container {
+  height: 100vh;
+  background: $color__cf-video;
+  clip-path: polygon(0 0, 51% 0, 30% 100%, 0% 100%);
+  position: relative;
+
+  &__video {
+    @include hxw(100vh, 41vw);
+
+    &-video {
+      margin-left: -10rem;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    .up {
+      position: absolute;
+      background: rgba(#0f0f0f, 0.8);
+      @include hxw(100vh, 51vw);
+    }
+  }
+}
+
+.container__firstlook {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  @include hxw(100vh, 64vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &-main {
+    @include hxw(45rem, 55rem);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+
+
+    &--descr {
+      height: 15rem;
+      user-select: none;
+      z-index: 500;
+
+      &-title {
+        font-size: 3.5rem;
+        text-align: center;
+        color: $color__cf-green;
+      }
+
+      h4 {
+        white-space: pre-wrap;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+
+  &-secondary {
+    @include hxw(40rem, 25rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    user-select: none;
+
+    &--view {
+      @include hxw(25rem, 25rem);
+      border-radius: 5px;
+
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+      &:last-child {
+        margin-top: 1rem;
+      }
+      &-descr {
+        height: 6rem;
+        z-index: 500;
+
+        h4 {
+          text-align: center;
+          color: darken($color__cf-green, 5%);
+        }
+
+        h6 {
+          font-size: 0.8rem;
+          white-space: pre-wrap;
+          text-align: center;
+          color: darken($color__cf-white, 5%);
+        }
+      }
+    }
+  }
+
+  .grad {
+    @include hxw(100%, 100%);
+    position: absolute;
+    background-image: linear-gradient(to top,
+      rgba(15, 15, 15, 1),
+      rgba(15, 15, 15, 0));
+    z-index: 100;
+  }
+
+  .size {
+    position: absolute;
+    border-radius: 5px;
+  }
+
+  .margin-firstlook {
+    margin-top: 5rem;
+  }
+}

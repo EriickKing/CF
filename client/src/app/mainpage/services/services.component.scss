@@ -1,0 +1,51 @@
+@import "../../../sass/mixin";
+@import "../../../sass/variable";
+
+.container__services {
+  position: relative;
+  user-select: none;
+
+  &-wrapp {
+    @include hxw(75vh, 100%);
+    z-index: 3;
+    @include flexCenter;
+    &-box {
+      // background: red;
+      font-size: 2rem;
+      color: white;
+      @include hxw(90%, 80%);
+      display: flex;
+      &--img{
+        @include hxw(100%, 55%);
+        .size {
+          border-radius: 4px;
+        }
+      }
+      &--desc{
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+          color: $color__cf-green;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+        .descr{
+          color: $color__cf-white;
+        }
+      }
+    }
+  }
+
+  &-back {
+    @include hxw(100%, 100%);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    background: $color__cf-diag;
+    clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 77% 100%);
+  }
+}

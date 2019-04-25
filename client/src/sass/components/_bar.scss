@@ -1,0 +1,33 @@
+.bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  @include hxw(6vh, 15%);
+  background: $color__cf-diag;
+  // border-bottom: 1px solid $color__cf-green;
+  @include flexCenter;
+  z-index: 2000;
+  border-bottom-left-radius: 25px;
+  box-shadow: -1px 3px 5px 0px rgba(60,60,60,0.75);
+
+  a {
+    @include flexCenter;
+    font-size: 2rem;
+    // background: red;
+    font-weight: 300;
+    color: $color__cf-white;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: .22rem;
+      margin-right: 2rem;
+    }
+    &:last-child {
+      margin-left: 1.8rem;
+    }
+
+    &:hover {
+      color: $color__cf-green;
+    }
+  }
+}

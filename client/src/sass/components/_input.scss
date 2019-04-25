@@ -1,0 +1,22 @@
+.input {
+  border-radius: 1px;
+  width: 45%;
+  outline: none;
+  padding: 1.4rem;
+  color: $color__cf-backg;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  background: whitesmoke;
+  border: 1px solid #a6a6a6;
+
+  &:focus {
+    border: 1px solid #737373;
+  }
+}
+
+.span {
+  margin: 1rem;
+  color: $color__cf-white;
+  font-size: 1.2rem;
+}

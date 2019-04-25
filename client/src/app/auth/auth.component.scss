@@ -1,0 +1,94 @@
+@import "../../sass/variable";
+@import "../../sass/mixin";
+@import "../../sass/components/input";
+@import "../../sass/components/button";
+
+.container__auth {
+  @include hxw(100%, 100%);
+  display: flex;
+
+  &-login {
+    background: $color__cf-diag;
+    @include hxw(88vh, 50%);
+
+    form {
+      @include hxw(50%, 100%);
+      // background: red;
+      margin-top: 13%;
+      flex-direction: column;
+      @include flexCenter();
+
+      i {
+        margin-right: .5rem;
+      }
+      .log {
+        align-self: baseline;
+        font-size: 2rem;
+        margin-left: 20%;
+      }
+
+      .social {
+        @include hxw(10%, 50%);
+        @include flexCenter();
+
+        .socialb {
+          color: $color__cf-white;
+          transition: .2s;
+
+          &:last-child {
+            margin-left: 1rem;
+          }
+        }
+
+        .f {
+          background: #4267b2;
+
+          &:hover {
+            background: #294170;
+          }
+        }
+
+        .g {
+          background: #ea4235;
+
+          &:hover {
+            background: #8a170f;
+          }
+        }
+      }
+
+    }
+  }
+
+  &-register {
+    background: $color__cf-white;
+    @include hxw(88vh, 50%);
+    form {
+      @include hxw(50%, 100%);
+      // background: red;
+      margin-top: 15%;
+      flex-direction: column;
+      @include flexCenter();
+
+      i {
+        margin-right: .5rem;
+      }
+      .log {
+        align-self: baseline;
+        font-size: 2rem;
+        margin-left: 20%;
+        color: $color__cf-diag;
+      }
+      .button {
+        background: black;
+        color: $color__cf-white;
+        &:hover{
+          background: $color__cf-backg;
+        }
+      }
+
+    }
+  }
+
+
+}

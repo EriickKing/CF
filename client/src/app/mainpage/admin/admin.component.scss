@@ -1,0 +1,73 @@
+@import "../../../sass/mixin";
+@import "../../../sass/variable";
+
+.container__navbar {
+  @include hxw(100vh, 20%);
+  background: $color__cf-diag;
+  position: sticky;
+  transition: .5s;
+  z-index: 1;
+
+  &-toggle {
+    @include hxw(100%, 100%);
+    display: flex;
+    flex-direction: column;
+
+    &-cf {
+      @include hxw(12%, 30%);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      align-self: center;
+    }
+
+    span {
+      align-self: center;
+      color: white;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    &-nav {
+      font-size: 1.8rem;
+      text-decoration: none;
+      padding: 2rem;
+      color: white;
+
+      &:hover {
+        background: #333333;
+        color: $color__cf-green;
+      }
+    }
+  }
+}
+
+.hide2 {
+  display: none;
+}
+
+.toggle {
+  z-index: 1;
+  position: absolute;
+  top: 46%;
+  z-index: 1000;
+  left: 19.3%;
+  @include hxw(8%, 2rem);
+  border: none;
+  outline: none;
+  background: $color__cf-green;
+  color: white;
+  border-radius: 2px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.hide {
+  transition: .5s;
+  position: fixed;
+  width: 1%;
+}
+
+.left {
+  left: .3%;
+  transition: .5s;
+}

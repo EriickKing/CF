@@ -1,0 +1,22 @@
+<section class="container__navbar" [ngClass]="{hide: config === 'true'}">
+  <div class="container__navbar-toggle" [ngClass]="{hide2: config === 'true'}">
+    <div class="container__navbar-toggle-cf">
+      <img src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1554843521/CentroFit/essential/logo2.png" alt=""
+        class="size">
+    </div> 
+    <span>Administrador</span>
+    <a routerLink="news" class="container__navbar-toggle-nav">Noticias</a>
+    <a href="" class="container__navbar-toggle-nav">Servicios</a>
+    <a href="" class="container__navbar-toggle-nav">Planes</a>
+    <a href="" class="container__navbar-toggle-nav">Horarios</a>
+    <a href="" class="container__navbar-toggle-nav">Instalaciones</a>
+    <a href="" class="container__navbar-toggle-nav">Pie de Pagina</a>
+    <a href="" class="container__navbar-toggle-nav" style="color: #66cb00">Salir</a>
+  </div>
+</section>
+<button class="toggle" (click)="toggle()" [ngClass]="{left: config === 'true'}">
+  <i class="fas fa-angle-double-left fa-lg" *ngIf="config === 'false'"></i>
+  <i class="fas fa-angle-double-right fa-lg" *ngIf="config === 'true'"></i>
+</button>
+<router-outlet></router-outlet> 
+

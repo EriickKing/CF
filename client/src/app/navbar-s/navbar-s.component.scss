@@ -1,0 +1,53 @@
+@import "../../sass/mixin";
+@import "../../sass/variable";
+.container__navbar {
+    @include hxw(12vh, 100%);
+    background: $color__cf-white;
+    border-bottom: .5px solid #4d4d4d;
+    display: flex;
+    justify-content: space-evenly;
+    &-logo {
+        // background: green;
+        @include hxw(100%, 30%);
+        & img {
+            margin-left: 25%;
+            margin-top:7%;
+            @include hxw(55%, 20%);
+        }
+    }
+    &-section {
+        // background: yellow;
+        @include hxw(100%, 80%);
+        @include flexCenter();
+        & a{
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: $color__cf-diag;
+            margin-left: 1rem;
+            transition: .2s;
+            &:hover {
+                color: $color__cf-backg;
+            }
+        }
+    }
+    &-icon {
+        @include flexCenter();
+        & a {
+            margin-left: 1rem;
+            font-size: 2rem;
+            color: $color__cf-diag;
+            transition: .2s;
+            &:first-child {
+                margin-right: 2rem;
+            }
+            &:hover {
+                color: $color__cf-backg;
+            }
+        }
+        @include hxw(100%, 30%);
+    }
+}
+
+.size {
+    @include hxw(100%, 100%);
+}

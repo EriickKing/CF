@@ -1,0 +1,194 @@
+@import "../../sass/variable";
+
+.container__navbar {
+    user-select: none;
+    position: absolute;
+    z-index: 200;
+    height: 11vh;
+    width: 95%;
+    margin-top: 1rem;
+    margin-left: 3.7rem;
+    display: flex;
+    justify-content: space-between;
+  
+    &-logo {
+      height: 11vh;
+      width: 8rem;
+      margin-top: 0.5rem;
+      margin-left: 5rem;
+      
+    }
+
+    .rsize{
+      width: 0;
+    }
+  
+    &-nav {
+      height: 11vh;
+      width: 60rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  
+      a:link,
+      a:visited {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+      }
+      a:hover{
+        color: $color__cf-green;
+      }
+  
+      .bola {
+        height: 8vh;
+        width: 5vw;
+      }
+    }
+  }
+  
+  .nav {
+    &__checkbox {
+      display: none;
+    }
+  
+    &__checkbox:checked ~ &__background {
+      transform: scale(80);
+    }
+  
+    &__checkbox:checked ~ &__nav {
+      display: flex;
+      animation: rightTocenter 1s cubic-bezier(0, 0.91, 0.65, 0.98);
+    }
+  
+    &__button {
+      background: $color__cf-white;
+      height: 6rem;
+      width: 6rem;
+      position: fixed;
+      top: 1.5rem;
+      right: 7rem;
+      border-radius: 50%;
+      z-index: 2000;
+      box-shadow: 0 1rem 2rem rgba($color__cf-white, 0.1);
+      cursor: pointer;
+      text-align: center;
+      user-select: none;
+    }
+  
+    &__background {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      top: 1.5rem;
+      right: 7rem;
+      background: radial-gradient($color__cf-green, #587e2a);
+      position: fixed;
+      z-index: 1000;
+      transition: transform 0.5s cubic-bezier(0, 0.91, 0.65, 0.98);
+    }
+  
+    &__nav {
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      z-index: 1500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // animation: centerToRight 2s ease-out;
+      display: none;
+    }
+  
+    &__list {
+      list-style: none;
+      text-align: center;
+    }
+  
+    &__item {
+      margin: 1rem;
+    }
+  
+    &__link {
+      user-select: none;
+  
+      &:link,
+      &:visited {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 300;
+        color: $color__cf-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $color__cf-white 50%
+        );
+        background-size: 240%;
+        transition: all 0.4s;
+      }
+  
+      &:hover,
+      &:active {
+        background-position: 100%;
+        color: $color__cf-backg;
+        transform: translateX(1rem);
+      }
+    }
+  
+    &__icon {
+      position: relative;
+      margin-top: 3rem;
+      user-select: none;
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 2px;
+        background: $color__cf-backg;
+        display: inline-block;
+      }
+  
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+      }
+  
+      &::before {
+        top: -0.8rem;
+      }
+  
+      &::after {
+        top: 0.8rem;
+      }
+    }
+  
+    &__button:hover &__icon::before {
+      top: -1rem;
+    }
+  
+    &__button:hover &__icon::after {
+      top: 1rem;
+    }
+  
+    &__checkbox:checked + &__button &__icon {
+      background: transparent;
+    }
+  
+    &__checkbox:checked + &__button &__icon::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &__checkbox:checked + &__button &__icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+  }
