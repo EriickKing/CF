@@ -16,6 +16,7 @@ export class AllNewComponent implements OnInit {
   remove = true;
   edit = true;
   showD = false;
+  param;
   l;
   constructor(
     private sharedService: SharedService,
@@ -50,6 +51,7 @@ export class AllNewComponent implements OnInit {
       this.edit = true
     } else {
       this.edit = false;
+      this.param = this.values[0];
     }
   }
 
@@ -70,13 +72,14 @@ export class AllNewComponent implements OnInit {
 
   all() {
     this.newService.allNews().subscribe(data => {      
-      this.news = data.news;
+      this.news = data.all;
     })
   }
 
   select() {
     this.selected = true;
   }
+  
 
   ngOnInit() {
     this.all();

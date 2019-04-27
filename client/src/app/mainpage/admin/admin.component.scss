@@ -4,7 +4,7 @@
 .container__navbar {
   @include hxw(100vh, 20%);
   background: $color__cf-diag;
-  position: sticky;
+  position: fixed;
   transition: .5s;
   z-index: 1;
 
@@ -47,7 +47,7 @@
 
 .toggle {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 46%;
   z-index: 1000;
   left: 19.3%;

@@ -18,7 +18,7 @@
 
 <section class="bar">
   <a routerLink="add"><i class="far fa-plus-square fa-lg"></i></a>
-  <button [ngClass]="{disabled: edit === true}" [disabled]="edit" routerLink="edit"><i class="far fa-edit fa-lg" ></i></button>
+  <button [ngClass]="{disabled: edit === true}" [disabled]="edit" routerLink="edit" [queryParams]="{i: param}"><i class="far fa-edit fa-lg" ></i></button>
   <button (click)="showDelete()" [ngClass]="{disabled: remove === true}" [disabled]="remove"><i class="far fa-trash-alt fa-lg"></i></button>
 </section>
 
