@@ -10,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewComponent } from './admin/new/new.component';
+import { AddNewComponent } from './admin/new/add-new/add-new.component';
+import { AllNewComponent } from './admin/new/all-new/all-new.component';
+import { EditNewComponent } from './admin/new/edit-new/edit-new.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +23,10 @@ import { NewComponent } from './admin/new/new.component';
         FooterComponent,
         NavbarComponent,
         AdminComponent,
-        NewComponent
+        NewComponent,
+        AddNewComponent,
+        AllNewComponent,
+        EditNewComponent
     ],
     imports: [
         CommonModule,

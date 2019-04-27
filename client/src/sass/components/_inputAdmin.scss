@@ -1,0 +1,54 @@
+.input {
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border: none;
+
+}
+
+.color:focus {
+  border: 1px solid $color__cf-green;
+  box-shadow: 2px 4px 5px -2px rgba(0,0,0,0.7);
+}
+textarea {
+  max-width: 93.8%;
+  min-width: 93.8%;
+  min-height: 20%;
+  transition: .5s;
+}
+
+input[type=file] {
+  align-self: center;
+  color: $color__cf-green;
+}
+
+.header {
+  color: $color__cf-green;
+  font-size: 2rem;
+  margin-bottom: 2rem
+}
+
+.submit {
+  cursor: pointer;
+  align-self: center;
+  width: 80%;
+  background: $color__cf-white;
+  transition: .5s;
+  font-weight: 600;
+  box-shadow: 2px 4px 5px -2px rgba(0,0,0,0.7);
+  &:hover {
+    color: white;
+    background: $color__cf-green;
+    transition: .5s;
+  }
+  &:active {
+    transition: .1s;
+    transform: translateY(2px)
+  }
+}
+
+.textarea {
+  transition: .5s;
+  max-width: 95%;
+  min-width: 95%;
+}

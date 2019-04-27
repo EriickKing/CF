@@ -10,13 +10,16 @@
   border-bottom-left-radius: 25px;
   box-shadow: -1px 3px 5px 0px rgba(60,60,60,0.75);
 
-  a {
-    @include flexCenter;
+  button, a {
+    // @include flexCenter;
     font-size: 2rem;
     // background: red;
+    background: none;
+    border: none;
+    outline: none;
     font-weight: 300;
-    color: $color__cf-white;
-    cursor: pointer;
+    // color: $color__cf-white;
+
 
     &:first-child {
       margin-top: .22rem;
@@ -25,9 +28,8 @@
     &:last-child {
       margin-left: 1.8rem;
     }
-
-    &:hover {
-      color: $color__cf-green;
-    }
   }
 }
+
+
+

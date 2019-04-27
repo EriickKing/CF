@@ -1,0 +1,31 @@
+.container__general{
+  @include default(100vh);
+  @include flexCenter;
+  form {
+    @include hxw(50%, 30%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  input, textarea {
+    margin-bottom: 2rem;
+  }
+}
+
+.hide {
+  transition: .5s;
+  @include hxw(100vh, 99%);
+  margin-left: 1%;
+}
+
+.show {
+  z-index: 1000;
+  text-decoration: none;
+  color: red;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+
+}

@@ -71,3 +71,8 @@
   left: .3%;
   transition: .5s;
 }
+
+.active {
+  background: #333333;
+  color: $color__cf-green;
+}

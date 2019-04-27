@@ -1,0 +1,31 @@
+<section class="container__news" [ngClass]="{hide: config === 'true'}">
+  <div class="container__news-box" *ngFor="let new of news">
+
+    <div class="container__news-box-img">
+      <img src="{{new.image}}" alt="" class="size">
+    </div>
+    <span class="title">{{new.title}}</span>
+    <span class="desc">{{new.desc}}</span>
+    <hr [ngClass]="{hr: config === 'true'}">
+  </div>
+  <form [formGroup]="checkForm">
+    <label class="container" *ngFor="let n of checks.controls; let i = index;">
+      <input type="checkbox" [formControl]="n" (change)="getValues()">
+      <span class="checkmark"></span>
+    </label>
+  </form>
+</section>
+
+<section class="bar">
+  <a routerLink="add"><i class="far fa-plus-square fa-lg"></i></a>
+  <button [ngClass]="{disabled: edit === true}" [disabled]="edit" routerLink="edit"><i class="far fa-edit fa-lg" ></i></button>
+  <button (click)="showDelete()" [ngClass]="{disabled: remove === true}" [disabled]="remove"><i class="far fa-trash-alt fa-lg"></i></button>
+</section>
+
+<section class="delete" [ngClass]="{move: config === 'true'}" *ngIf="showD">
+  <span>¿Borrar <span class="number">{{l}}</span> elemento(s)?</span>
+  <div>
+    <button class="acp" (click)="delete()">Aceptar</button>
+    <button class="cnl" (click)="hideDelete()">Cancelar</button>
+  </div>
+</section>

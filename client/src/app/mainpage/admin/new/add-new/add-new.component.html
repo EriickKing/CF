@@ -1,0 +1,36 @@
+<section class="container__general" [ngClass]="{hide: config === 'true'}">
+  <form [formGroup]="addForm">
+    <span class="header">Crear Noticia</span>
+    <!-- <p>{{addForm.controls.title.value.length}}/50</p> -->
+    <input type="text" name="" class="input color" placeholder="Titulo" formControlName="title" maxlength="50">
+    <!-- <p>{{addForm.controls.desc.value.length}}/150</p> -->
+    <textarea name="" placeholder="Descripcion" class="input color" [ngClass]="{textarea: config === 'true'}"
+      formControlName="desc" maxlength="150"></textarea>
+    <input type="file" class="input" (change)="onFileChange($event)">
+    <button type="submit" [disabled]="(addForm.invalid) || (!dis)" class="submit input"
+      (click)="addNew()">Aceptar</button>
+  </form>
+  <a (click)="toggle()" class="show">Vista Previa</a>
+</section>
+
+
+<section class="preview" [ngClass]="{hide: config === 'true'}" *ngIf="!hide">
+  <div class="container">
+    <div class="grad"></div>
+    <img [src]="imagePreview" alt="" class="size">
+    <div class="descr">
+      <h1 class="title">{{addForm.controls.title.value}}</h1>
+      <br>
+      <h4>{{addForm.controls.desc.value}}</h4>
+      <div>&nbsp;</div>
+    </div>
+  </div>
+  <div class="smallcontainer">
+    <div class="grad"></div>
+    <img [src]="imagePreview" alt="" class="size">
+    <div class="descr">
+      <h4>{{addForm.controls.title.value}}</h4>
+      <h6>{{addForm.controls.desc.value}}</h6>
+    </div>
+  </div>
+</section>
