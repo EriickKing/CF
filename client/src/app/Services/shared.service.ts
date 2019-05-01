@@ -13,8 +13,14 @@ export class SharedService {
   private config = new BehaviorSubject(localStorage.getItem("config_admin"));
   currentConfig = this.config.asObservable();
 
+  private config2 = new BehaviorSubject(localStorage.getItem("config_nav"));
+  currentConfig2 = this.config2.asObservable();
+
   changeConfig(vari: string) {
     this.config.next(vari)
+  }
+  changeConfig2(vari: string) {
+    this.config2.next(vari)
   }
 
   addCheckers(array) {

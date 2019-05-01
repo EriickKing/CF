@@ -1,3 +1,10 @@
-<p>
-  edit-inst works!
-</p>
+<section class="container__general" [ngClass]="{hide: config === 'true'}">
+  <form [formGroup]="editForm">
+    <span class="header">Editar Inst</span>
+    <input type="text" name="" class="input color" placeholder="Titulo" formControlName="title" maxlength="50">
+    <input type="file" class="input" (change)="onFileChange($event)">
+    <button type="submit" [disabled]="(editForm.invalid) || (!dis)" class="submit input"
+      (click)="editInst()">Aceptar</button>
+  </form>
+</section>
+

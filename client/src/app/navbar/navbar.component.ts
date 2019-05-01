@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SharedService } from '../Services/shared.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  config: string;
+  @ViewChild("hola") hola:ElementRef
 
-  constructor() { }
+  constructor(
+    private sharedService: SharedService
+  ) { }
+
+
 
   ngOnInit() {
+    this.sharedService.currentConfig2.subscribe(config => this.config = config);
+    
   }
 
 }

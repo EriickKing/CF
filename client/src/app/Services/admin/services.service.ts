@@ -6,52 +6,43 @@ import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
+export class ServicesService {
   domain = environment.apiUrl;
-  // params = {i: this.route.snapshot.queryParams["i"]};
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute
   ) { }
 
-  addNew(title: string, desc: string, image: File) {
+  addService(title: string, desc: string, image: File) {
     const postData = new FormData();
     postData.append("title", title);
     postData.append("desc", desc);
     postData.append("image", image);
     return this.http
-      .post(this.domain + "/news/add", postData)
+      .post(this.domain + "/services/add", postData)
       .pipe(map((res: any) => res));
   }
 
-  allNews() {
-    return this.http.get<any>(this.domain + "/news/all")
-
+  allServices() {
+    return this.http.get<any>(this.domain + "/services/all")
   }
   allDelete(array) {
     return this.http
-      .post(this.domain + "/news/many", array)
+      .post(this.domain + "/services/many", array)
       .pipe(map((res: any) => res));
   }
-  oneNews() {
+  oneServices() {
     return this.http
-      .get(this.domain + "/news/one" + "?i=" + this.route.snapshot.queryParams["i"])
+      .get(this.domain + "/services/one" + "?i=" + this.route.snapshot.queryParams["i"])
       .pipe(map((res: any) => res));
   }
-  editNew(title: string, desc: string, image: File) {
+  editServices(title: string, desc: string, image: File) {
     const postData = new FormData();
     postData.append("title", title);
     postData.append("desc", desc);
     postData.append("image", image);
     return this.http
-      .put(this.domain + "/news/edit"+ "?i=" + this.route.snapshot.queryParams["i"], postData)
+      .put(this.domain + "/services/edit"+ "?i=" + this.route.snapshot.queryParams["i"], postData)
       .pipe(map((res: any) => res));
   }
-
-  threeNews() {
-    return this.http
-      .get(this.domain + "/news/three")
-      .pipe(map((res: any) => res));
-  }
-
 }

@@ -6,51 +6,42 @@ import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
+export class InstService {
   domain = environment.apiUrl;
-  // params = {i: this.route.snapshot.queryParams["i"]};
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute
   ) { }
 
-  addNew(title: string, desc: string, image: File) {
+  addInst(title: string, image: File) {
     const postData = new FormData();
     postData.append("title", title);
-    postData.append("desc", desc);
     postData.append("image", image);
     return this.http
-      .post(this.domain + "/news/add", postData)
+      .post(this.domain + "/insts/add", postData)
       .pipe(map((res: any) => res));
   }
 
-  allNews() {
-    return this.http.get<any>(this.domain + "/news/all")
-
+  allInst() {
+    return this.http
+      .get(this.domain + "/insts/all")
   }
   allDelete(array) {
     return this.http
-      .post(this.domain + "/news/many", array)
+      .post(this.domain + "/insts/many", array)
       .pipe(map((res: any) => res));
   }
-  oneNews() {
+  oneInst() {
     return this.http
-      .get(this.domain + "/news/one" + "?i=" + this.route.snapshot.queryParams["i"])
+      .get(this.domain + "/insts/one" + "?i=" + this.route.snapshot.queryParams["i"])
       .pipe(map((res: any) => res));
   }
-  editNew(title: string, desc: string, image: File) {
+  editInst(title: string, image: File) {
     const postData = new FormData();
     postData.append("title", title);
-    postData.append("desc", desc);
     postData.append("image", image);
     return this.http
-      .put(this.domain + "/news/edit"+ "?i=" + this.route.snapshot.queryParams["i"], postData)
-      .pipe(map((res: any) => res));
-  }
-
-  threeNews() {
-    return this.http
-      .get(this.domain + "/news/three")
+      .put(this.domain + "/insts/edit"+ "?i=" + this.route.snapshot.queryParams["i"], postData)
       .pipe(map((res: any) => res));
   }
 

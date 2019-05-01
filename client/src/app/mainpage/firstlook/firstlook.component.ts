@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/Services/admin/news.service';
 
 @Component({
   selector: 'app-firstlook',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstlookComponent implements OnInit {
   e = "https://res.cloudinary.com/dhy7mnmoe/image/upload/v1553591679/Friso/Services/img-20190213-wa0009_fzvxoa.jpg";
-  constructor() { }
+  news;
+  show = true;
+  constructor(
+    private newService: NewsService
+  ) { }
+
+  three() {
+    this.newService.threeNews().subscribe(data => {
+      this.news = data.news;
+    })
+  }
 
   ngOnInit() {
+    this.three();
   }
 
 }

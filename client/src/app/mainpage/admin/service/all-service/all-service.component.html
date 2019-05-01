@@ -1,3 +1,31 @@
-<p>
-  all-service works!
-</p>
+<section class="container__news" [ngClass]="{hide: config === 'true'}">
+  <div class="container__news-box" *ngFor="let service of services">
+
+    <div class="container__news-box-img">
+      <img src="{{service.image}}" alt="" class="size">
+    </div>
+    <span class="title">{{service.title}}</span>
+    <span class="desc">{{service.desc}}</span>
+    <hr [ngClass]="{hr: config === 'true'}">
+  </div>
+  <form [formGroup]="checkForm">
+    <label class="container" *ngFor="let n of checks.controls; let i = index;">
+      <input type="checkbox" [formControl]="n" (change)="getValues()">
+      <span class="checkmark"></span>
+    </label>
+  </form>
+</section>
+
+<section class="bar">
+  <a routerLink="add"><i class="far fa-plus-square fa-lg"></i></a>
+  <button [ngClass]="{disabled: edit === true}" [disabled]="edit" routerLink="edit" [queryParams]="{i: param}"><i class="far fa-edit fa-lg" ></i></button>
+  <button (click)="showDelete()" [ngClass]="{disabled: remove === true}" [disabled]="remove"><i class="far fa-trash-alt fa-lg"></i></button>
+</section>
+
+<section class="delete" [ngClass]="{move: config === 'true'}" *ngIf="showD">
+  <span>¿Borrar <span class="number">{{l}}</span> elemento(s)?</span>
+  <div>
+    <button class="acp" (click)="delete()">Aceptar</button>
+    <button class="cnl" (click)="hideDelete()">Cancelar</button>
+  </div>
+</section>

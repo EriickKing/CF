@@ -1,33 +1,44 @@
 <section class="nav">
-  <input type="checkbox" name="" id="navi-toggle" class="nav__checkbox" />
+  <input type="checkbox" name="" id="navi-toggle" class="nav__checkbox" [checked]="config == 'false'" />
   <label for="navi-toggle" class="nav__button">
     <span class="nav__icon">&nbsp;</span>
   </label>
-  <div class="nav__background">&nbsp;</div>
+  <!-- <div class="nav__background" id="backg" navScroll>&nbsp;</div> -->
 
-  <nav class="nav__nav">
+  <nav class="nav__nav" id="list" navScroll>
     <ul class="nav__list">
-      <li class="nav__item"><a href="/store" class="nav__link">Tienda</a></li>
-      <li class="nav__item"><a href="" class="nav__link">Noticias</a></li>
-      <li class="nav__item"><a href="" class="nav__link">Horarios</a></li>
-      <li class="nav__item"><a href="" class="nav__link">Instalaciones</a></li>
+      <li class="nav__item">
+        <a href="#start" class="nav__link" *ngIf="config == 'true'"
+          [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Inicio</a>
+      </li>
+      <li class="nav__item">
+        <a href="#services" class="nav__link"
+          [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Servicios</a></li>
+      <li class="nav__item">
+        <a href="#plans" class="nav__link" [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Planes</a></li>
+      <li class="nav__item">
+        <a href="#insts" class="nav__link" [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Instalaciones</a>
+      </li>
+      <li class="nav__item">
+        <a href="" class="nav__link" [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Horarios</a></li>
+      <li class="nav__item">
+        <a href="/store" class="nav__link" [ngClass]="{color: config == 'true', nocolor: config == 'false'}">Tienda</a>
+      </li>
+      <!-- <li class="nav__item"><a href="/store" class="nav__link">Salir</a></li> -->
     </ul>
   </nav>
 </section>
 
 <section class="container__navbar">
-  <a href="" class="rsize"
-    ><img
-      class="container__navbar-logo"
-      src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1554843521/CentroFit/essential/logo.png"
-      alt=""
-      srcset=""
-  /></a>
-  <div class="container__navbar-nav">
-    <a href="">Inicio</a> 
-    <a href="#1">Servicios</a> 
-    <a href="#2">Planes</a>
-    <!-- <a routerLink="">Salir</a> -->
+  <a href="" class="rsize"><img class="container__navbar-logo"
+      src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1554843521/CentroFit/essential/logo.png" alt=""
+      srcset="" /></a>
+  <!-- <div class="container__navbar-nav">
+
+    <a href="#services">Servicios</a>
+    <a href="#plans">Planes</a>
+    <a href="#insts">Instalaciones</a>
+
     <a href="" class="bola"></a>
-  </div>
+  </div> -->
 </section>

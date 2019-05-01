@@ -43,7 +43,7 @@ export class EditNewComponent implements OnInit {
       this.editForm.value.desc,
       this.editForm.value.image,
     ).subscribe(data => {
-      this.router.navigate(["/admin/news"])
+      this.router.navigate(["/admin/new"])
     })
   }
 

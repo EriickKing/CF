@@ -3,19 +3,16 @@ const asset = require("./assets");
 
 async function all(res, model, json) {
   const all = await model.find()
-    .where("status").equals(1)
+    .sort({
+      createdAt: -1
+    })
     .select(json);
-  if (all.length !== 0) {
+  if (all)
     return res.status(200).json({
       success: true,
       all
     });
-  } else {
-    return res.status(404).json({
-      success: false,
-      message: "No hay nada que mostrar"
-    });
-  };
+
 };
 
 async function one(req, res, model) {

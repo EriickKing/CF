@@ -1,38 +1,33 @@
 const express = require("express");
 const router = express.Router();
 const functions = require("../../src/functions");
-const {
-  News,
-  validate
-} = require("../../models/admin/model_news");
+const { Services, validate } = require("../../models/admin/model_service");
 const asset = require("../../src/assets");
 const error = require("../../src/errors");
 
 router.post("/add", asset.Multer, async (req, res) => {
   error.NoImage(req, res);
   date = new Date().toString().replace(/ \w+-\d+ \(.*\)$/, "");
-  cloud = await asset.CloudUpload(req, "CentroFit/news");
+  cloud = await asset.CloudUpload(req, "CentroFit/services");
   json = { title: req.body.title, desc: req.body.desc, image: cloud.secure_url, createdAt: date};
-  functions.add(req, res, validate, News, json)
+  functions.add(req, res, validate, Services, json)
 });
 
 router.put("/edit", asset.Multer, async (req, res) => {
   try {
     error.ValidateJoi(req, res, validate);
-    // error.InvalidID(req, res);
-    const news = await News.findOne({ _id: req.query.i });
-    // error.NoFound(res, news);
+    const services = await Services.findOne({ _id: req.query.i });
     var date = new Date().toString().replace(/ \w+-\d+ \(.*\)$/, "");
     if (!req.file) {
-      news.set({
+      services.set({
         title: req.body.title,
         desc: req.body.desc,
-        image: news.image,
+        image: services.image,
         updatedAt: date
       });
     } else {
-      cloud = await asset.CloudUpload(req, "CentroFit/news");
-      news.set({
+      cloud = await asset.CloudUpload(req, "CentroFit/services");
+      services.set({
         title: req.body.title,
         desc: req.body.desc,
         image: cloud.secure_url,
@@ -40,35 +35,23 @@ router.put("/edit", asset.Multer, async (req, res) => {
       });
     };
 
-    asset.Save(res, news)
+    asset.Save(res, services)
   } catch (err) {
     return err;
   };
 });
 
 router.get("/one", async(req, res) => {
-  functions.one(req, res, News);
-});
-
-router.get("/three", async (req, res) => {
-  const news = await News.find()
-  .limit(3)
-  .sort({ createdAt: -1 })
-  .select({title: 1, desc: 1, image: 1});
-  if (news) 
-    return res.status(200).json({
-      success:  true,
-      news  
-  });
+  functions.one(req, res, Services);
 });
 
 router.get("/all", async (req, res) => {
   json = {title: 1, desc: 1, image: 1}
-  functions.all(res, News, json)
+  functions.all(res, Services, json)
 });
 
 router.post("/many", async (req, res) => {
-  functions.many(req, res, News);
+  functions.many(req, res, Services);
 })
 
 module.exports = router;

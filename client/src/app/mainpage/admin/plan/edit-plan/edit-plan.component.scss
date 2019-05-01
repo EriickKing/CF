@@ -1,0 +1,31 @@
+@import "../../../../../sass/mixin";
+@import "../../../../../sass/variable";
+@import "../../../../../sass/components/inputAdmin";
+
+@import "../../../../../sass/components/generalAdmin";
+
+p {
+  margin-left: 90%;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  color: $color__cf-green;
+}
+
+.container__general {
+  form {
+    width: 35%;
+  }
+}
+
+.wrapp {
+  display: flex;
+  justify-content: space-between;
+  // background: red;
+  .time {
+    width: 25%;
+  }
+  
+  .price {
+    width: 25%;
+  }
+}

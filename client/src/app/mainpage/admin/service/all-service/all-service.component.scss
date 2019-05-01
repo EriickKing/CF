@@ -1,0 +1,93 @@
+@import "../../../../../sass/mixin";
+@import "../../../../../sass/variable";
+@import "../../../../../sass/components/check";
+@import "../../../../../sass/components/bar";
+@import "../../../../../sass/components/delete";
+$heightBox: 25vh;
+
+.container__news {
+  @include default($heightBox);
+
+  form {
+    // background: rgba(0, 255, 64, 0.2);
+    position: absolute;
+    top: 0;
+    @include hxw(100%, 96%);
+  }
+  &-box {
+    @include hxw(100%, 100%);
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    outline: none;
+    position: relative;
+    margin-bottom: 2rem;
+    // background: palevioletred;
+
+    &-img {
+      position: absolute;
+      top: 4%;
+      left: 8%;
+      @include hxw($heightBox - 2vh, 15%);
+      // background: goldenrod;
+      z-index: -1;
+    }
+    .title {
+      @include hxw(5vh, 70%);
+      // background: green;
+      position: absolute;
+      top: 4%;
+      left: 24%;
+      color: $color__cf-green;
+      font-size: 2rem;
+    }
+    .desc {
+      @include hxw(18vh, 70%);
+      // background: red;
+      position: absolute;
+      top: 25%;
+      left: 24%;
+      color: white;
+      font-size: 1.8rem;
+    }
+
+
+    hr {
+      border-color: #595959;
+      position: absolute;
+      top: $heightBox;
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.hide {
+  transition: .5s;
+  @include hxw($heightBox, 99%);
+  margin-left: 1%;
+}
+
+.hr {
+  width: 99%;
+  margin-left: 1%;
+}
+
+button, a {
+  color: $color__cf-white;
+  cursor: pointer;
+  &:hover {
+    color: $color__cf-green;
+  }
+}
+
+.disabled {
+  color: $color__cf-backg;
+  cursor: context-menu;
+  &:hover {
+    color: $color__cf-backg;
+  }
+}
+

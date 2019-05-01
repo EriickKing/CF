@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const joi = require("joi");
 
-const newSchema = new Schema ({
+const serviceSchema = new Schema ({
   title: {
     type: String,
     required: true
@@ -16,16 +16,16 @@ const newSchema = new Schema ({
   updatedAt: String
 });
 
-const News = mongoose.model("News", newSchema);
+const Services = mongoose.model("Services", serviceSchema);
 
-function validate(n) {
+function validate(s) {
   const schema = {
     title: joi.string().required(),
     desc: joi.string().required(),
     image: joi.string()
   }
-  return joi.validate(n, schema)
+  return joi.validate(s, schema)
 }
 
-exports.News = News;
+exports.Services = Services;
 exports.validate = validate;

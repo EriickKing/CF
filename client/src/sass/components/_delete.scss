@@ -1,6 +1,6 @@
 .delete {
   @include hxw(20vh, 25%);
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 48%;
   background: rgba($color: $color__cf-diag, $alpha: .7);

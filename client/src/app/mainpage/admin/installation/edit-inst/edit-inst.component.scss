@@ -1,0 +1,12 @@
+@import "../../../../../sass/mixin";
+@import "../../../../../sass/variable";
+@import "../../../../../sass/components/inputAdmin";
+@import "../../../../../sass/components/generalAdmin";
+@import "../../../../../sass/components/preview";
+
+p {
+  margin-left: 90%;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  color: $color__cf-green;
+}

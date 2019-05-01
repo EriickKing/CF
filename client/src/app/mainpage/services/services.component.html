@@ -1,12 +1,12 @@
 <section class="container__services" id="services">
-  <div class="container__services-wrapp">
-    <div class="container__services-wrapp-box">
+  <div class="container__services-wrapp" *ngFor="let serv of services; let i = index">
+    <div class="container__services-wrapp-box" [ngClass]="{right: i % 2 == 0}">
       <div class="container__services-wrapp-box--img">
-        <img src="{{e}}" alt="" class="size">
+        <img src="{{serv.image}}" alt="" class="size">
       </div>
       <div class="container__services-wrapp-box--desc">
-        <p class="title">sdasda</p>
-        <p class="descr">sdasdaweqweqweqweq</p>
+        <p class="title">{{serv.title}}</p>
+        <p class="descr">{{serv.desc}}</p>
       </div>
     </div>
 

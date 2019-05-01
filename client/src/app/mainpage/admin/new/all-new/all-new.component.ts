@@ -23,11 +23,12 @@ export class AllNewComponent implements OnInit {
     private newService: NewsService,
     private fb: FormBuilder
   ) { 
-    setTimeout(() => {
-      this.checkForm = this.fb.group({
-        n: this.sharedService.addCheckers(this.news)
-      })    
-    }, 200);
+    // setTimeout(() => {
+    //   this.checkForm = this.fb.group({
+    //     n: this.sharedService.addCheckers(this.news)
+    //   })    
+    // }, 100);
+
   };
 
   get checks() {
@@ -69,17 +70,16 @@ export class AllNewComponent implements OnInit {
     })
   }
 
-
-  all() {
-    this.newService.allNews().subscribe(data => {      
-      this.news = data.all;
-    })
+  data;
+  async all() {
+    this.data = await this.newService.allNews().toPromise();
+    this.news = this.data.all;
+    this.checkForm = this.fb.group({
+      n: this.sharedService.addCheckers(this.news)
+    }) 
   }
 
-  select() {
-    this.selected = true;
-  }
-  
+ 
 
   ngOnInit() {
     this.all();

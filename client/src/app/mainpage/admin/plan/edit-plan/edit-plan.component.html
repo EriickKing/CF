@@ -1,3 +1,22 @@
-<p>
-  edit-plan works!
-</p>
+<section class="container__general" [ngClass]="{hide: config === 'true'}">
+  <form [formGroup]="editForm">
+    <span class="header">Editar Plan</span>
+    <input type="text" name="" class="input color" placeholder="Titulo" formControlName="title" maxlength="20">
+    <div class="wrapp">
+      <input type="text" name="" class="input color price" placeholder="Precio" formControlName="price" maxlength="4">
+      <input type="time" class="input color time" formControlName="bhour">
+      <input type="time" class="input color time" formControlName="ehour">
+    </div>
+    <div class="wrapp">
+      <input type="date" class="input color" formControlName="bpromo">
+
+      <input type="date" class="input color" formControlName="epromo" >
+    </div>
+    <input type="file" class="input" (change)="onFileChange($event)">
+    <button type="submit"  [disabled]="(editForm.invalid) || (!dis)" class="submit input"
+      (click)="editPlan()">Aceptar</button>
+  </form>
+</section>
+
+
+

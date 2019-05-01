@@ -1,3 +1,13 @@
-<p>
-  add-service works!
-</p>
+<section class="container__general" [ngClass]="{hide: config === 'true'}">
+  <form [formGroup]="addForm">
+    <span class="header">Crear Servicio</span>
+    <!-- <p>{{addForm.controls.title.value.length}}/50</p> -->
+    <input type="text" name="" class="input color" placeholder="Titulo" formControlName="title" maxlength="50">
+    <!-- <p>{{addForm.controls.desc.value.length}}/150</p> -->
+    <textarea name="" placeholder="Descripcion" class="input color" [ngClass]="{textarea: config === 'true'}"
+      formControlName="desc" maxlength="150"></textarea>
+    <input type="file" class="input" (change)="onFileChange($event)">
+    <button type="submit" [disabled]="(addForm.invalid) || (!dis)" class="submit input"
+      (click)="addService()">Aceptar</button>
+  </form>
+</section>

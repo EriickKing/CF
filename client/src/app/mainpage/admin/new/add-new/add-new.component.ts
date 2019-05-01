@@ -53,7 +53,7 @@ export class AddNewComponent implements OnInit {
       )
       .subscribe(
         data => {
-          this.router.navigate(["/admin/news"])
+          this.router.navigate(["/admin/new"])
         }
       )
   }

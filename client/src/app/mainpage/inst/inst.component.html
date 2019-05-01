@@ -1,0 +1,11 @@
+<section class="container__insts" id="insts">
+  <div class="container__insts-wrapp" *ngFor="let inst of insts">
+    <div class="container__insts-wrapp--image">
+      <img src="{{inst.image}}" alt="" class="size">
+    </div>
+    <div class="container__insts-wrapp--desc">
+      <p class="title">{{inst.title}}</p>
+    </div>
+  </div>
+  <!-- <div class="container__insts-back"></div> -->
+</section>

@@ -1,6 +1,8 @@
 @import "../../../sass/mixin";
 @import "../../../sass/variable";
-
+.right{
+  flex-direction: row-reverse;
+}
 .container__services {
   position: relative;
   user-select: none;

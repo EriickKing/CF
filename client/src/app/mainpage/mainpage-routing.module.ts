@@ -34,7 +34,6 @@ const mainpageRoutes: Routes = [
         ]},
         {path: "plan", component: PlanComponent, children: [
             {path: "", component: AllPlanComponent},
-            {path: "add", component: AddPlanComponent},
             {path: "edit", component: EditPlanComponent}
         ]},
         {path: "installation", component: InstallationComponent, children: [

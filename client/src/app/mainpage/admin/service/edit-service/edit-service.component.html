@@ -1,3 +1,11 @@
-<p>
-  edit-service works!
-</p>
+<section class="container__general" [ngClass]="{hide: config === 'true'}">
+  <form [formGroup]="editForm">
+    <span class="header">Editar Servicio</span>
+    <input type="text" name="" class="input color" placeholder="Titulo" formControlName="title" maxlength="50">
+    <textarea name="" placeholder="Descripcion" class="input color" [ngClass]="{textarea: config === 'true'}"
+      formControlName="desc" maxlength="150"></textarea>
+    <input type="file" class="input" (change)="onFileChange($event)">
+    <button type="submit" [disabled]="(editForm.invalid) || (!dis)" class="submit input"
+      (click)="editNew()">Aceptar</button>
+  </form> 
+</section>

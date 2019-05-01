@@ -1,16 +1,16 @@
 <section class="container__plans" id="plans">
-  <div class="container__plans-box">
+  <div class="container__plans-box" *ngFor="let plan of plans">
     <div class="container__plans-box--img">
-      <img src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1553591679/Friso/Services/img-20190213-wa0009_fzvxoa.jpg" alt="" class="size">
+      <img src="{{plan.image}}" alt="" class="size">
     </div>
     <div class="container__plans-box--desc">
-      <span class="title">Estudiantes</span>
+      <span class="title">{{plan.title}}</span>
       <hr>
-      <span>$350</span>
+      <span class="font">${{plan.price}}</span>
       <hr>
-      <span>Siempre</span>
+      <span class="font">{{plan.bhour}} - {{plan.ehour}}</span>
       <hr>
-      <span class="prom">12-15 NOV</span>
+      <span class="prom font">{{plan.bpromo | date: 'dd MMM'}} - {{plan.epromo | date: 'dd MMM'}}</span>
     </div>
   </div>
 </section>

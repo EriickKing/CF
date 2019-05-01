@@ -25,6 +25,8 @@ import { InstallationComponent } from './admin/installation/installation.compone
 import { AllInstComponent } from './admin/installation/all-inst/all-inst.component';
 import { AddInstComponent } from './admin/installation/add-inst/add-inst.component';
 import { EditInstComponent } from './admin/installation/edit-inst/edit-inst.component';
+import { InstComponent } from './inst/inst.component';
+import { SharedModule } from '../Services/directives/shared.module';
 
 @NgModule({
     declarations: [
@@ -50,12 +52,14 @@ import { EditInstComponent } from './admin/installation/edit-inst/edit-inst.comp
         InstallationComponent,
         AllInstComponent,
         AddInstComponent,
-        EditInstComponent
+        EditInstComponent,
+        InstComponent
     ],
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        MainPageRoutingModule
+        MainPageRoutingModule,
+        SharedModule
     ],
 })
 export class MainPageModule {}
