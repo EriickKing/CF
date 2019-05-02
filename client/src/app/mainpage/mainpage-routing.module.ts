@@ -19,10 +19,11 @@ import { AllInstComponent } from './admin/installation/all-inst/all-inst.compone
 import { AddInstComponent } from './admin/installation/add-inst/add-inst.component';
 import { EditInstComponent } from './admin/installation/edit-inst/edit-inst.component';
 import { HourComponent } from './hour/hour.component';
+import { CfGuard } from '../guard/cf.guard';
 
 const mainpageRoutes: Routes = [
     {path: '', component: MainpageComponent},
-    {path: "admin", component: AdminComponent, children: [
+    {path: "admin", component: AdminComponent, canActivate: [CfGuard], children: [
         {path: "new", component: NewComponent, children: [
             {path: "", component: AllNewComponent},
             {path: "add", component: AddNewComponent},
