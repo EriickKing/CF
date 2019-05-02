@@ -32,5 +32,6 @@ export class NavBarDirective implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+  }
 }

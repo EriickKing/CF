@@ -8,15 +8,19 @@ import { SharedService } from '../Services/shared.service';
 })
 export class NavbarComponent implements OnInit {
   config: string;
-  @ViewChild("hola") hola:ElementRef
 
   constructor(
     private sharedService: SharedService
-  ) { }
+  ) {
+    localStorage.setItem("config_nav", 'false')
+    this.config = localStorage.getItem("config_nav");
+    this.sharedService.changeConfig2(this.config);
+  }
 
 
 
   ngOnInit() {
+
     this.sharedService.currentConfig2.subscribe(config => this.config = config);
     
   }

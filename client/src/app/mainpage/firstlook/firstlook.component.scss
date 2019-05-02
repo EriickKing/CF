@@ -6,14 +6,26 @@
   background: $color__cf-video;
   clip-path: polygon(0 0, 51% 0, 30% 100%, 0% 100%);
   position: relative;
-
   &__video {
-    @include hxw(100vh, 41vw);
-
+    // @include hxw(50vh, 40vw);
+    
     &-video {
       margin-left: -10rem;
       height: 100vh;
       z-index: -1;
+      // @include respond(big-desktop) {
+      //   height: 100vh;
+      // }
+      @include respond(tab-port) {
+        display: none;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+      // @include respond(tab-port) {
+      //   display: none;
+      // }
+      
     }
 
     .up {
@@ -22,6 +34,7 @@
       @include hxw(100vh, 51vw);
     }
   }
+
 }
 
 .container__firstlook {
@@ -33,6 +46,15 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  // background: red;
+  @include respond(tab-port) {
+    @include hxw(100%, 100%);
+  }
+  @include respond(phone) {
+    @include hxw(100%, 100%);
+    align-items: baseline;
+  }
+
 
   &-main {
     @include hxw(45rem, 55rem);
@@ -42,8 +64,18 @@
     border-radius: 5px;
     box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
     position: relative;
-
-
+    @include respond(tab-land) {
+      margin-right: 2rem;
+      @include hxw(40rem, 50rem);
+    }
+    @include respond(tab-port) {
+      margin-left: 20%;
+      @include hxw(35rem, 45rem)
+    }
+    @include respond(phone) {
+      margin: 0;
+      @include hxw(45rem, 55rem);
+    }
     &--descr {
       height: 15rem;
       user-select: none;
@@ -70,6 +102,18 @@
     flex-direction: column;
     justify-content: space-evenly;
     user-select: none;
+    @include respond(tab-land) {
+      margin-right: 1rem;
+    }
+    @include respond(tab-port) {
+      @include hxw(35rem, 25rem)
+    }
+    @include respond(phone) {
+      position: absolute;
+      @include hxw(25rem, 100%);
+      top: 50%;
+      flex-direction: row;
+    }
 
     &--view {
       @include hxw(25rem, 25rem);
@@ -80,6 +124,9 @@
       position: relative;
       &:last-child {
         margin-top: 1rem;
+        @include respond(phone) {
+          margin-top: 0;
+        }        
       }
       &-descr {
         height: 6rem;
@@ -116,5 +163,9 @@
 
   .margin-firstlook {
     margin-top: 5rem;
+
+    @include respond(phone) {
+      margin-top: 15rem;
+    }
   }
 }

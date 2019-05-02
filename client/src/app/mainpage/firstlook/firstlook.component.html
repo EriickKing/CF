@@ -12,18 +12,18 @@
 
 
 <section class="container__firstlook" id="start">
-  <div class="container__firstlook-main margin-firstlook">
+  <div class="container__firstlook-main margin-firstlook" *ngIf="news && news.length > 0">
     <div class="grad"></div>
-    <img src="{{news[0].image}}" alt="" class="size">
+    <img src="{{news[0]?.image}}" alt="" class="size">
     <div class="container__firstlook-main--descr">
-      <h1 class="container__firstlook-main--descr-title">{{news[0].title}}</h1>
+      <h1 class="container__firstlook-main--descr-title">{{news[0]?.title}}</h1>
       <br>
-      <h4>{{news[0].desc}}</h4>
+      <h4>{{news[0]?.desc}}</h4>
       <div>&nbsp;</div>
     </div>
   </div>
 
-  <div class="container__firstlook-secondary margin-firstlook">
+  <div class="container__firstlook-secondary margin-firstlook" *ngIf="news && news.length > 0">
     <div class="container__firstlook-secondary--view">
       <div class="grad"></div>
       <img src="{{news[1].image}}" alt="" class="size">

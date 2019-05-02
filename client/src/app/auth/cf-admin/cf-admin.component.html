@@ -1,0 +1,8 @@
+<section class="container__admin">
+  <form [formGroup]="adminForm">
+    <p>ADMINISTRADOR</p>
+    <input type="text" formControlName="email" placeholder="Email">
+    <input type="password" formControlName="password" placeholder="Contraseña">
+    <button type="submit" (click)="login()">Ingresar</button>
+  </form>
+</section>

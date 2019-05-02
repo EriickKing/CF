@@ -9,6 +9,12 @@
   background: $color__cf-diag;
   &-wrapp {
     @include hxw(50vh,30%);
+    @include respond(tab-port) {
+      width: 40%;
+    }
+    @include respond(phone) {
+        width: 80%;
+    }
     // background: green;
     margin: 2rem;
     z-index: 3;

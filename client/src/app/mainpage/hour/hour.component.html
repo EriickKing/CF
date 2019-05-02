@@ -1,0 +1,21 @@
+<!-- <button type="submit" class="toggle"></button> -->
+
+<section class="container__hour" id="hours">
+  <div class="container__hour-buttons">
+    <a (click)="n()" [ngClass]="{color: s === 'normal'}">NORMAL</a>
+    <a (click)="b()" [ngClass]="{color: s === 'box'}">BOX</a>
+    <a (click)="c()" [ngClass]="{color: s === 'crossfit'}">CROSSFIT</a>
+
+  </div>
+  <div class="container__hour-text" *ngIf="array && array.length > 0">
+    <p class="title"><span>{{array.bday}} a {{array.eday}}</span></p>
+    <p class="numb"><span class="hour">{{array.hour}}</span></p>
+    <p class="numb"><span class="hour">{{array.houram}}</span></p>
+    <p class="numb"><span class="hour">{{array.hourpm}}</span></p>
+    <p class="title" *ngIf="array?.saturday === 'true'">Sabados</p>
+    <p class="numb"><span class="hour">{{array.shour}}</span></p>
+    <p class="numb"><span class="hour">{{array.shouram}}</span></p>
+    <p class="numb"><span class="hour">{{array.shourpm}}</span></p>
+  </div>
+
+</section>

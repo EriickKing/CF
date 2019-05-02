@@ -19,9 +19,12 @@ html {
     @include respond(phone) {
         font-size: 43.75%;
     }
+    @include respond(smallphone) {
+        font-size: 30.75%;
+    }
 
     @include respond(big-desktop) {
-        font-size: 75%;
+        font-size: 90%;
     }
 
     scroll-behavior: smooth;

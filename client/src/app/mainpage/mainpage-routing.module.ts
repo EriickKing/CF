@@ -18,6 +18,7 @@ import { InstallationComponent } from './admin/installation/installation.compone
 import { AllInstComponent } from './admin/installation/all-inst/all-inst.component';
 import { AddInstComponent } from './admin/installation/add-inst/add-inst.component';
 import { EditInstComponent } from './admin/installation/edit-inst/edit-inst.component';
+import { HourComponent } from './hour/hour.component';
 
 const mainpageRoutes: Routes = [
     {path: '', component: MainpageComponent},
@@ -40,6 +41,9 @@ const mainpageRoutes: Routes = [
             {path: "", component: AllInstComponent},
             {path: "add", component: AddInstComponent},
             {path: "edit", component: EditInstComponent}
+        ]},
+        {path: "hour", component: HourComponent, children: [
+            
         ]}
     ]}
 ];

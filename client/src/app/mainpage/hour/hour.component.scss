@@ -1,0 +1,54 @@
+@import "../../../sass/mixin";
+@import "../../../sass/variable";
+.container__hour {
+  @include hxw(100%, 100%);
+  background:$color__cf-backg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &-buttons {
+    margin-top: 2%;
+    a {
+      text-decoration: none;
+      color: $color__cf-white;
+      margin: 2rem;
+      cursor: pointer;
+      font-size: 2rem;
+      &:hover{
+        color: $color__cf-green;
+      }
+    }
+    .color {
+      color: $color__cf-green;
+    }
+  }
+  &-text {
+    width: 100%;
+    text-align: center;
+    // @include respond(tab-port) {
+    //   width: 100%;
+    // }
+    // @include respond(phone) {
+    //   width: 100%;
+    // }
+    .title{
+      margin: 1rem;
+      font-size: 4rem;
+    }
+    p {
+      color:white;
+      font-size: 1.8rem;
+
+    }
+    .hour {
+      font-family: Arial, Helvetica, sans-serif;
+      color: $color__cf-green;      
+    }
+    .numb {
+      margin: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+

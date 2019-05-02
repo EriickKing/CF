@@ -6,6 +6,10 @@
   background: $color__cf-video;
   display: flex;
 
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
   &-box {
     @include flexCenter;
     flex: 1;
@@ -15,6 +19,18 @@
     &--icon {
       @include hxw(48%, 30%);
       margin-right: 1rem;
+
+      @include respond(tab-land) {
+        @include hxw(35%, 25%);
+      }
+
+      @include respond(tab-port) {
+        @include hxw(40%, 30%);
+      }
+
+      @include respond(phone) {
+        @include hxw(60%, 8%);
+      }
     }
 
     &--name {
@@ -63,11 +79,29 @@
       justify-content: center;
       align-items: baseline;
       flex-direction: row;
+
+      @include respond(phone) {
+        margin-bottom: 2rem;
+      }
     }
   }
 
   .cf {
     flex-direction: row;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    @include respond(phone) {
+      flex-direction: row;
+    }
+  }
+
+  .mar {
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
   }
 }
 

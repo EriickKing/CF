@@ -27,6 +27,8 @@ import { AddInstComponent } from './admin/installation/add-inst/add-inst.compone
 import { EditInstComponent } from './admin/installation/edit-inst/edit-inst.component';
 import { InstComponent } from './inst/inst.component';
 import { SharedModule } from '../Services/directives/shared.module';
+import { HoursComponent } from './admin/hour/hours.component';
+import { HourComponent } from './hour/hour.component';
 
 @NgModule({
     declarations: [
@@ -53,7 +55,9 @@ import { SharedModule } from '../Services/directives/shared.module';
         AllInstComponent,
         AddInstComponent,
         EditInstComponent,
-        InstComponent
+        InstComponent,
+        HourComponent,
+        HoursComponent
     ],
     imports: [
         CommonModule,

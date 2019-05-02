@@ -32,7 +32,8 @@ const userSchema = new Schema({
     },
     typeAcc: {
         type: String,
-        default: "normal"
+        default: "normal",
+        uppercase: true
     },
     createdAt: {
         type: String

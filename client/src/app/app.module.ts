@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { MainPageModule } from './mainpage/mainpage.module';
 import { StoreModule } from './store/store.module';
+import { CfAdminComponent } from './auth/cf-admin/cf-admin.component';
 
 import localeEsMx from "@angular/common/locales/es-MX";
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEsMx, "es-MX")
 
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig } from  'ngx-ui-loader';
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#66cb00",
   "bgsOpacity": 1,
@@ -65,6 +67,7 @@ export function provideConfig() {
   declarations: [
     AppComponent,
     AuthComponent,
+    CfAdminComponent,
   ],
   imports: [
     BrowserModule,
