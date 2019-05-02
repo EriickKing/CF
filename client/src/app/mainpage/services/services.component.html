@@ -1,6 +1,7 @@
 <section class="container__services" id="services">
   <div class="container__services-wrapp" *ngFor="let serv of services; let i = index">
-    <div class="container__services-wrapp-box" [ngClass]="{right: i % 2 == 0}">
+    <div class="container__services-wrapp-box" [ngClass]="{right: i % 2 == 0}"
+    data-aos="fade-up">
       <div class="container__services-wrapp-box--img">
         <img src="{{serv.image}}" alt="" class="size">
       </div>

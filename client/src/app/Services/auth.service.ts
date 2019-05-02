@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from "../../environments/environment";
+// import { environment } from "../../environments/environment";
+import { environment } from "../../environments/environment.prod";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from "rxjs/operators";

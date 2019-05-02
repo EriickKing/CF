@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-const passport = require("passport");
+const path = require("path");
 dotenv.config({
     path: "./.env"
 });
@@ -29,6 +29,13 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(__dirname + "/frontend"))
+
 require("./src/routes")(app);
+
+app.use((req, res, next) => {
+    res.sendfile(path.join(__dirname + "/frontend/index.html"));
+})
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Port: ${port}`));

@@ -19,6 +19,7 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEsMx, "es-MX")
 
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig } from  'ngx-ui-loader';
+import { NofoundComponent } from './nofound/nofound.component';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#66cb00",
   "bgsOpacity": 1,
@@ -69,6 +70,7 @@ export function provideConfig() {
     AppComponent,
     AuthComponent,
     CfAdminComponent,
+    NofoundComponent,
   ],
   imports: [
     BrowserModule,
