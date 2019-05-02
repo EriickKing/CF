@@ -1,11 +1,11 @@
 const cloud = require("cloudinary");
 const fs = require("fs");
 const multer = require("multer");
-
+const path = require("path");
 
 var store = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./images");
+      cb(null, "./");
     },
     filename: (req, file, cb) => {
       const name = file.originalname.toLocaleLowerCase();
