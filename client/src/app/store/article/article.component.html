@@ -1,0 +1,19 @@
+<app-navbar-s></app-navbar-s>
+<section class="container__article">
+  <div class="container__article-img">
+    <img src="{{article?.image}}" alt="" class="size">
+  </div>
+  <div class="container__article-sale">
+    <span class="title">CENTRO FIT MUJER</span>
+    <p class="name">{{article?.name}}</p>
+    <p class="color">{{article?.color}}</p>
+    <p class="price">${{article?.price}}.00</p>
+    <p class="stock">DISPONIBLES: {{article?.stock}}</p>
+    <p class="siz">TALLAS:</p>
+    <div class="sizes">
+      <button>S</button>
+      <button>XL</button>
+    </div>
+    <input type="button" value="AGREGAR AL CARRITO" (click)="add(article?._id)">
+  </div>
+</section>

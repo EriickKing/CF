@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-store',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.component.scss']
 })
 export class StoreComponent implements OnInit {
+a = localStorage.getItem("config_login");
 
-  constructor() { }
+  constructor(
+    private authService: LogService
+  ) { 
+    if (this.a === null) {
+      localStorage.setItem("config_login", "false");
+    }
+  }
 
   ngOnInit() {
   }

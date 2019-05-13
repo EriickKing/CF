@@ -1,0 +1,40 @@
+@import "../../sass//mixin";
+@import "../../sass/variable";
+
+.container__firstlook {
+  @include hxw(60vh, 100%);
+  display: flex;
+  &-box {
+    @include hxw(100%, 50%);
+  }
+}
+.container__mostview {
+  @include hxw(60vh, 100%);
+  // background: palegreen;
+  display: flex;
+  &-desc {
+    @include hxw(100%, 20%);
+    @include flexCenter;
+    flex-direction: column;
+    border-right: .5px solid #4d4d4d;
+    .uno {
+      font-size: 3rem;
+      color: $color__cf-white;
+    }
+    .dos {
+      color: $color__cf-white;
+      font-size: 3rem;
+    }
+  }
+  &-box {
+    @include hxw(100%, 80%);
+    // background: palevioletred;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &--wrapp {
+      @include hxw(85%, 25%);
+      background: black;
+    }
+  }
+}

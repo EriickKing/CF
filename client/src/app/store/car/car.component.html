@@ -1,0 +1,25 @@
+<app-navbar-s></app-navbar-s>
+
+<div class="container__shopcar">
+
+  <div class="container__shopcar-wrapp" [ngClass]="{dim: suc === false}">
+      <p class="carr">CARRITO</p> <a (click)="clean()" class="clean" *ngIf="suc">Limpiar</a>
+    <div class="container__shopcar-wrapp--info" *ngFor="let art of article">
+      <div class="container__shopcar-wrapp--info-img">
+        <img src="{{art?.image}}" alt="" class="size">
+      </div>
+      <div class="container__shopcar-wrapp--info-desc">
+        <p class="name">{{art?.name}}</p>
+        <p class="color">{{art?.color}}</p>
+        <p class="price">${{art?.price}}.00</p>
+      </div>
+    </div>
+  </div>
+  <div class="container__shopcar-sale">
+    <p class="title">CENTRO FIT</p>
+    <p class="products">Productos: <span>{{article?.length}}</span> </p>
+    <p>Total: <span>${{sum}}.00</span></p>
+    <button>Proceder al Pago</button>
+  </div>
+</div>
+<app-footer></app-footer>

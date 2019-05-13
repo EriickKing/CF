@@ -3,12 +3,12 @@
   <section class="container__auth-login">
     <form action="" [formGroup]="loginForm">
       <span class="span log">INICIAR SESION</span>
-      <input type="text" class="input" placeholder="CORREO ELECTRONICO" id="" formControlName="email">
-      <input type="password" class="input" placeholder="CONTRASEÑA" id="" formControlName="password">
+      <input type="text" class="input" placeholder="CORREO ELECTRONICO" formControlName="email">
+      <input type="password" class="input" placeholder="CONTRASEÑA" formControlName="password">
       <button type="submit" class="button">INICIAR SESION</button>
       <span class="span">──────── O ────────</span>
       <div class="social">
-        <button type="submit" class="button socialb f"><i class="fab fa-facebook fa-lg"></i>Facebook</button>
+        <button type="submit" class="button socialb f" (click)="facebookLogin()"><i class="fab fa-facebook fa-lg"></i>Facebook</button>
         <button type="submit" class="button socialb g"><i class="fab fa-google"></i>Google</button>
       </div>
     </form>
@@ -16,9 +16,9 @@
   <section class="container__auth-register">
     <form action="" [formGroup]="registerForm">
       <span class="span log">REGISTRARSE</span>
-      <input type="text" class="input" placeholder="NOMBRE" id="" formControlName="name">
-      <input type="text" class="input" placeholder="CORREO ELECTRONICO" id="" formControlName="email">
-      <input type="password" class="input" placeholder="CONTRASEÑA" id="" formControlName="password">
+      <input type="text" class="input" placeholder="NOMBRE" formControlName="name">
+      <input type="text" class="input" placeholder="CORREO ELECTRONICO" formControlName="email">
+      <input type="password" class="input" placeholder="CONTRASEÑA" formControlName="password">
       <button type="submit" class="button">REGISTRARSE</button>
       <span class="span">──────── O ────────</span>
       <!-- <div class="social">

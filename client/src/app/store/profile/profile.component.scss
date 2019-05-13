@@ -1,0 +1,44 @@
+@import "../../../sass/variable";
+@import "../../../sass/mixin";
+.container__profile{
+  @include hxw(100vh, 100%);
+  // background:palegoldenrod;
+  display: flex;
+  &-info {
+    @include hxw(100%, 30%);
+    // background: paleturquoise;
+    display: flex;
+    justify-content: center;
+    &--box {
+      margin-top: 2rem;
+      @include hxw(50%, 70%);
+      background: $color__cf-white;
+      display: flex;
+      flex-direction: column;
+      & p {
+        text-align: center;
+        margin: 1rem;
+        color: $color__cf-diag;
+        font-size: 2rem;
+        & i {
+          margin-right: .5rem;
+        }
+        .fa-facebook-f {
+          color: #4267b2;
+        }
+      }
+    }
+  }
+  &-options {
+    @include hxw(100%, 70%);
+    // background: palevioletred;
+    border-left: .5px solid #4d4d4d;
+    display: flex;
+    justify-content: center;
+    &--box {
+      margin: 1rem;
+      @include hxw(20rem, 30rem);
+      background: $color__cf-diag;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-// import { environment } from "../../environments/environment";
-import { environment } from "../../environments/environment.prod";
+import { environment } from "../../environments/environment";
+// import { environment } from "../../environments/environment.prod";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from "rxjs/operators";
@@ -17,11 +17,9 @@ export class LogService {
   loggedIn() {
     return this.helper.isTokenExpired(localStorage.getItem("config_user"));
   }
-
   // asd() {
   //   console.log(this.helper.getTokenExpirationDate(localStorage.getItem("config_user")));
   // }
-
   logout() {
     localStorage.setItem("config_user", "");
   }
@@ -32,9 +30,17 @@ export class LogService {
       .pipe(map((res: any) => res));
   };
 
+  login(user) {
+    return this.http
+      .post(this.domain + "/login", user)
+      .pipe(map((res: any) => res));
+  }
+
+
+  //STORE
   socialR(user) {
     return this.http
-      .post(this.domain + "/socialregister", user) 
+      .post(this.domain + "/socialregister", user)
       .pipe(map((res: any) => res));
   };
 
@@ -44,9 +50,16 @@ export class LogService {
       .pipe(map((res: any) => res));
   };
 
-  login(user) {
-    return this.http
-      .post(this.domain + "/login", user) 
-      .pipe(map((res: any) => res));
+  loggedStore() {
+    return this.helper.isTokenExpired(localStorage.getItem("config_user_store"));
+  }
+
+  logoutStore() {
+    localStorage.setItem("config_user", "");
+    localStorage.setItem("config_login" , "false")
+  }
+
+  cog_log() {
+    return localStorage.getItem("config_login");
   }
 }

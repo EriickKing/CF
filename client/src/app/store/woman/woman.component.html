@@ -1,0 +1,26 @@
+
+<app-navbar-s></app-navbar-s>
+<div class="container">
+  <div class="container__filter">
+    <div class="container__filter-types">
+      <p>Categorias</p>
+      <a (click)="all()">Todo</a>
+      <a routerLink="/store/w" [queryParams]="{filter: 'Tops'}" (click)="param()">Top</a>
+      <a routerLink="/store/w" [queryParams]="{filter: 'Leggings'}" (click)="param()">Leggings</a>
+
+    </div>
+    <div class="container__filter-colors">
+
+    </div>
+    <div class="container__filter-sizes"></div>
+  </div>
+  <div class="container__box">
+    <a routerLink="/store/article" [queryParams]="{i: woman._id}" class="container__box-wrapp" *ngFor="let woman of w">
+      <img src="{{woman.image}}" alt="" class="size">
+      <p class="name">{{woman.name}}</p>
+      <p class="price">${{woman.price}}</p>
+    </a>
+
+  </div>
+</div>
+<app-footer></app-footer>

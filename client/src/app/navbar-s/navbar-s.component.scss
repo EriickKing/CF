@@ -2,7 +2,7 @@
 @import "../../sass/variable";
 .container__navbar {
     @include hxw(12vh, 100%);
-    background: $color__cf-white;
+    background: $color__cf-backg;
     border-bottom: .5px solid #4d4d4d;
     display: flex;
     justify-content: space-evenly;
@@ -11,8 +11,8 @@
         @include hxw(100%, 30%);
         & img {
             margin-left: 25%;
-            margin-top:7%;
-            @include hxw(55%, 20%);
+            margin-top:4.5%;
+            @include hxw(65%, 18%);
         }
     }
     &-section {
@@ -22,11 +22,11 @@
         & a{
             text-decoration: none;
             font-size: 1.3rem;
-            color: $color__cf-diag;
+            color: $color__cf-white;
             margin-left: 1rem;
             transition: .2s;
             &:hover {
-                color: $color__cf-backg;
+                color: $color__cf-green;
             }
         }
     }
@@ -35,16 +35,25 @@
         & a {
             margin-left: 1rem;
             font-size: 2rem;
-            color: $color__cf-diag;
+            color: $color__cf-white;
             transition: .2s;
             &:first-child {
                 margin-right: 2rem;
             }
             &:hover {
-                color: $color__cf-backg;
+                color: $color__cf-green;
             }
         }
         @include hxw(100%, 30%);
+        .len {
+            position: absolute;
+            top: 5%;
+            right: 7%;
+            font-size: 1.6rem;
+            color: $color__cf-diag;
+            font-weight: 600;
+            z-index: 500;
+        }
     }
 }
 

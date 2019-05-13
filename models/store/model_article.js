@@ -5,7 +5,8 @@ const joi = require("joi");
 const articleSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        uppercase: true
     },
     desc: {
         type: String,
@@ -24,15 +25,22 @@ const articleSchema = new Schema({
     },
     category: {
         type: String,
-        required: true
+        required: true,
+        lowercase: true
+    },
+    genre: {
+        type: String,
+        required: true,
+        lowercase: true
     },
     color: {
-        type: Array,
+        type: String,
         required: true
     },
     size: {
         type: Array,
-        required: true
+        required: true,
+        uppercase: true
     },
     createdAt: {
         type: String
@@ -43,7 +51,7 @@ const articleSchema = new Schema({
     status: {
         type: Number,
         default: 1
-    }    
+    }
 });
 
 const Article = mongoose.model("Article", articleSchema);
@@ -56,7 +64,8 @@ function validate(article) {
             stock: joi.number().required(),
             image: joi.string(),
             category: joi.string().required(),
-            color: joi.array().required(),
+            genre: joi.string().required(),
+            color: joi.string().required(),
             size: joi.array().required(),
             status: joi.number()
     }

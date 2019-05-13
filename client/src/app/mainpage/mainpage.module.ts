@@ -65,5 +65,8 @@ import { HourComponent } from './hour/hour.component';
         MainPageRoutingModule,
         SharedModule
     ],
+    exports: [
+        FooterComponent
+    ]
 })
 export class MainPageModule {}
