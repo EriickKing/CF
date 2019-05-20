@@ -52,7 +52,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("274126438973-p2uoon1e46ksldeio3temqu54fbeg9g4.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("274126438973-ki11d2mgmbau21a7ai49u2knv554e5j7.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
