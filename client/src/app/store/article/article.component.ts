@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/Services/store/article.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-article',
@@ -12,13 +13,15 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private articleService: ArticleService,
-    private route: Router
+    private route: Router,
+    private title: Title
   ) { }
 
 
   one() {
     this.articleService.one().subscribe(data => {
       this.article = data.one;
+      this.title.setTitle("CF " + this.article.name)
     })
   }
   add(id) {

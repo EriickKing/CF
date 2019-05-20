@@ -1,0 +1,20 @@
+<app-navbar-s></app-navbar-s>
+
+<section class="container__address">
+  <h1>TUS DIRECCIONES</h1>
+  <div class="container__address-wrapp">
+    <button class="another" *ngFor="let addr of address">
+      <p><i class="fas fa-user"></i>{{addr.name}}</p>
+      <p class="font"><i class="fas fa-map-marker-alt"></i>{{addr.address}}</p>
+      <p><i class="fas fa-map-marker-alt"></i>{{addr.suburb}}</p>
+      <p class="font"><i class="fas fa-map-marker-alt"></i>{{addr.postal}}</p>
+      <p class="font"><i class="fas fa-phone"></i>{{addr.phone}}</p>
+      <p><i class="fas fa-city"></i>{{addr.city}}</p>
+      <!-- <button class="use button">Usar</button> -->
+      <button class="edit button" routerLink="/store/address/edit" [queryParams]="{i: addr._id}">Editar</button>
+      <button class="delete button" (click)="delete(addr._id)">Eliminar</button>
+    </button>
+    <button class="more" routerLink="add"><i class="fas fa-plus fa-5x"></i></button>
+  </div>
+</section>
+<app-footer></app-footer>

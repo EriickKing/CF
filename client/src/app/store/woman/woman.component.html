@@ -1,4 +1,3 @@
-
 <app-navbar-s></app-navbar-s>
 <div class="container">
   <div class="container__filter">
@@ -7,14 +6,26 @@
       <a (click)="all()">Todo</a>
       <a routerLink="/store/w" [queryParams]="{filter: 'Tops'}" (click)="param()">Top</a>
       <a routerLink="/store/w" [queryParams]="{filter: 'Leggings'}" (click)="param()">Leggings</a>
-
+      <p>Color</p>
+      <div class="colors">
+        <button routerLink="/store/w" [queryParams]="{color: 'Rojo'}" (click)="param2()" class="red"></button>
+        <button routerLink="/store/w" [queryParams]="{color: 'Negro'}" (click)="param2()" class="black"></button>
+        <button routerLink="/store/w" [queryParams]="{color: 'Purpura'}" (click)="param2()" class="purple"></button>
+      </div>
     </div>
+
     <div class="container__filter-colors">
 
     </div>
     <div class="container__filter-sizes"></div>
   </div>
   <div class="container__box">
+    <p class="order">Ordenar Por: </p> <select (change)="onChange($event.target.value)">
+
+      <option>Nuevo</option>
+      <option>Mayor Precio</option>
+      <option>Menor Precio</option>
+    </select>
     <a routerLink="/store/article" [queryParams]="{i: woman._id}" class="container__box-wrapp" *ngFor="let woman of w">
       <img src="{{woman.image}}" alt="" class="size">
       <p class="name">{{woman.name}}</p>

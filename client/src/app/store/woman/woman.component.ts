@@ -11,6 +11,7 @@ import { Title } from '@angular/platform-browser';
 export class WomanComponent implements OnInit {
   w;
   Params;
+  Par;
   constructor(
     private articleService: ArticleService,
     private route: ActivatedRoute,
@@ -34,6 +35,36 @@ export class WomanComponent implements OnInit {
     });
     this.data = await this.articleService.categoryW(this.Params).toPromise();
     this.w = this.data.article
+  }
+
+  async param2() {
+    this.par = await this.route.queryParams.subscribe((params) => {
+      this.Params = params["color"];
+    });
+    this.data = await this.articleService.categoryW2(this.Params).toPromise();
+    this.w = this.data.article
+  }
+
+  moreless() {
+    this.articleService.moreless().subscribe(data => {
+      this.w = data.article
+    })
+  }
+  lessmore() {
+    this.articleService.lessmore().subscribe(data => {
+      this.w = data.article
+    })
+  }
+
+  onChange(value) {
+    console.log(value);
+    if (value === "Nuevo") {
+      this.all()
+    } else if (value === "Mayor Precio") {
+      this.moreless()
+    } else if (value === "Menor Precio") {
+      this.lessmore()
+    }
   }
 
   ngOnInit() {

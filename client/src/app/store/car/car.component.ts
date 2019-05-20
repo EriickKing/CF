@@ -14,7 +14,7 @@ export class CarComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private title: Title
-  ) { this.title.setTitle("Carrito")}
+  ) { this.title.setTitle("CF Carrito")}
 
   findmany() {
     this.articleService.findMany({ all: JSON.parse(localStorage.getItem("avct_item")) }).subscribe(data => {
@@ -28,6 +28,19 @@ export class CarComponent implements OnInit {
 
   clean() {
     localStorage.removeItem("avct_item")
+    location.reload();
+  }
+
+  remove(id) {
+    const products = JSON.parse(localStorage.getItem('avct_item'));
+    for (let i = 0; i < products.length; i++) {
+			if (products[i]._id === id._id) {
+				products.splice(i, 1);
+				break;
+			}
+		}
+		// ReAdding the products after remove
+    localStorage.setItem('avct_item', JSON.stringify(products));
     location.reload();
   }
   ngOnInit() {

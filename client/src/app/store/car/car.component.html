@@ -12,14 +12,16 @@
         <p class="name">{{art?.name}}</p>
         <p class="color">{{art?.color}}</p>
         <p class="price">${{art?.price}}.00</p>
+        <a class="dele" (click)="remove(art?._id)">Eliminar</a>
       </div>
+
     </div>
   </div>
   <div class="container__shopcar-sale">
     <p class="title">CENTRO FIT</p>
     <p class="products">Productos: <span>{{article?.length}}</span> </p>
     <p>Total: <span>${{sum}}.00</span></p>
-    <button>Proceder al Pago</button>
+    <button routerLink="/store/sale">Proceder al Pago</button>
   </div>
 </div>
 <app-footer></app-footer>

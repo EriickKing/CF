@@ -2,18 +2,21 @@
 <section class="container__profile">
   <div class="container__profile-info">
     <div class="container__profile-info--box">
-      <p><i class="fab fa-facebook-f"></i>Erick King</p>
+      <p>
+        <i *ngIf="user?.typeAcc === 'FACEBOOK'" class="fab fa-facebook-f"></i>
+        <i *ngIf="user?.typeAcc === 'GOOGLE'" class="fab fa-google"></i>
+        <i *ngIf="user?.typeAcc === 'normal'" class="fas fa-user"></i>
+        {{user?.name}}</p>
       <hr>
-      <p><i class="fas fa-envelope"></i>erickkg3@gmail.com</p>
+      <p><i class="fas fa-envelope"></i>{{user?.email}}</p>
       <hr>
-      <p><i class="fas fa-phone"></i>6683973927</p>
-      <hr>
-      <p><i class="fas fa-birthday-cake"></i>04/04/1997</p>
-      <hr>
+      <a (click)="logout()">CERRAR SESION</a>
     </div>
   </div>
   <div class="container__profile-options">
-    <div class="container__profile-options--box"></div>
-    <div class="container__profile-options--box"></div>
+    <button class="container__profile-options--box" routerLink="/store/address"> <i
+        class="fas fa-map-marked-alt fa-lg"></i>DIRECCIONES</button>
+    <button class="container__profile-options--box"><i class="fas fa-truck fa-lg"></i>PEDIDOS</button>
   </div>
 </section>
+<app-footer></app-footer>

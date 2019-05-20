@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 
@@ -17,9 +17,10 @@ import { NotCfGuard } from './guard/not-cf.guard';
 import localeEsMx from "@angular/common/locales/es-MX";
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEsMx, "es-MX")
-
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig } from  'ngx-ui-loader';
 import { NofoundComponent } from './nofound/nofound.component';
+import { storeGuard } from './guard/store.guard';
+import { NotStoreGuard } from './guard/notStore.guard';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#66cb00",
   "bgsOpacity": 1,
@@ -49,10 +50,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 }
 
 let config = new AuthServiceConfig([
-  // {
-  //   id: GoogleLoginProvider.PROVIDER_ID,
-  //   provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
-  // },
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("274126438973-p2uoon1e46ksldeio3temqu54fbeg9g4.apps.googleusercontent.com")
+  },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
     provider: new FacebookLoginProvider("332282894026245")
@@ -76,6 +77,7 @@ export function provideConfig() {
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule,
     SocialLoginModule,
@@ -84,7 +86,7 @@ export function provideConfig() {
     StoreModule
   ],
   providers: [{ provide: AuthServiceConfig, useFactory: provideConfig },
-  { provide: LOCALE_ID, useValue: 'es-MX' }, CfGuard, NotCfGuard],
+  { provide: LOCALE_ID, useValue: 'es-MX' }, CfGuard, NotCfGuard, storeGuard, NotStoreGuard],
   exports: [],
   bootstrap: [AppComponent]
 })

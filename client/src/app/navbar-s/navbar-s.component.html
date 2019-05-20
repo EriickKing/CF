@@ -6,11 +6,11 @@
     </a>
   </div>
   <div class="container__navbar-section">
-    <a routerLink="/store/w">MUJER</a>
-    <a routerLink="/store/m">HOMBRE</a>
+    <a routerLink="/store/w" routerLinkActive="active">MUJER</a>
+    <a >HOMBRE</a>
   </div>
   <div class="container__navbar-icon">
-    <a href=""><i class="fas fa-search"></i></a>
+    <a><i class="fas fa-search"></i></a>
     <a [routerLink]="bol ? ['/store/profile'] : ['/auth']"><i class="fas fa-user fa-lg"></i></a>
     <span class="len">{{articleService.navbarCartCount}}</span>
     <a routerLink="/store/shopcar"><i class="fas fa-shopping-bag fa-lg"></i></a>

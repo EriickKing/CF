@@ -3,33 +3,25 @@
   <section class="container__auth-login">
     <form action="" [formGroup]="loginForm">
       <span class="span log">INICIAR SESION</span>
-      <input type="text" class="input" placeholder="CORREO ELECTRONICO" formControlName="email">
-      <input type="password" class="input" placeholder="CONTRASEÑA" formControlName="password">
-      <button type="submit" class="button">INICIAR SESION</button>
+      <p class="warning" *ngIf="!success">{{message}}</p>
+      <input type="email" class="input" placeholder="CORREO ELECTRONICO" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" formControlName="email" maxlength="40" [ngClass]="{warningtwo: loginForm.controls.email.invalid && loginForm.controls.email.dirty}">
+      <input type="password" class="input" placeholder="CONTRASEÑA" formControlName="password" maxlength="30" [ngClass]="{warningtwo: loginForm.controls.password.invalid && loginForm.controls.password.dirty}">
+      <button type="submit" class="button" (click)="login()" [disabled]="loginForm.invalid">INICIAR SESION</button>
       <span class="span">──────── O ────────</span>
       <div class="social">
         <button type="submit" class="button socialb f" (click)="facebookLogin()"><i class="fab fa-facebook fa-lg"></i>Facebook</button>
-        <button type="submit" class="button socialb g"><i class="fab fa-google"></i>Google</button>
+        <button type="submit" class="button socialb g" (click)="googleLogin()"><i class="fab fa-google"></i>Google</button>
       </div>
     </form>
   </section>
   <section class="container__auth-register">
     <form action="" [formGroup]="registerForm">
       <span class="span log">REGISTRARSE</span>
-      <input type="text" class="input" placeholder="NOMBRE" formControlName="name">
-      <input type="text" class="input" placeholder="CORREO ELECTRONICO" formControlName="email">
-      <input type="password" class="input" placeholder="CONTRASEÑA" formControlName="password">
-      <button type="submit" class="button">REGISTRARSE</button>
-      <span class="span">──────── O ────────</span>
-      <!-- <div class="social">
-        <button type="submit" class="button socialb f"><i class="fab fa-facebook fa-lg"></i>Facebook</button>
-        <button type="submit" class="button socialb g"><i class="fab fa-google"></i>Google</button>
-      </div> -->
+      <input type="text" class="input" placeholder="NOMBRE" formControlName="name" maxlength="50" [ngClass]="{warningtwo: registerForm.controls.name.invalid && registerForm.controls.name.dirty}">
+      <input type="email" class="input" placeholder="CORREO ELECTRONICO" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" maxlength="40" formControlName="email" [ngClass]="{warningtwo: registerForm.controls.email.invalid && registerForm.controls.email.dirty}"> 
+      <input type="password" class="input" placeholder="CONTRASEÑA" maxlength="30" formControlName="password" [ngClass]="{warningtwo: registerForm.controls.password.invalid && registerForm.controls.password.dirty}">
+      <button type="submit" class="button" (click)="register()" [disabled]="registerForm.invalid">REGISTRARSE</button>
     </form>
   </section>
-
-
-
-
-
 </section>
+<app-footer></app-footer>

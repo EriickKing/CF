@@ -43,12 +43,17 @@ router.get("/woman", async (req, res) => {
 })
 
 router.get("/category", async (req, res) => {
-  const article = await Article.find()
+  const article = await Article.find({
+      $or: [{
+          category: req.query.filter
+        },
+        {
+          color: req.query.color
+        }
+      ]
+    })
     .sort({
       createdAt: -1
-    })
-    .where({
-      category: req.query.filter
     })
   if (article)
     return res.status(200).json({
@@ -80,8 +85,49 @@ router.post("/many", async (req, res) => {
       message: "No hay nada"
     })
   }
-
 });
 
+router.get("/all", async (req, res) => {
+  const articles = await Article.find()
+    .limit(3)
+    .sort({
+      createdAt: -1
+    })
+
+  if (articles)
+    return res.status(200).json({
+      success: true,
+      articles
+    })
+})
+
+router.get("/moreless", async (req, res) => {
+  const article = await Article.find()
+    .sort({
+      price: -1
+    })
+    .where({
+      genre: "m"
+    })
+  if (article)
+    return res.status(200).json({
+      success: true,
+      article
+    })
+})
+router.get("/lessmore", async (req, res) => {
+  const article = await Article.find()
+    .sort({
+      price: 1
+    })
+    .where({
+      genre: "m"
+    })
+  if (article)
+    return res.status(200).json({
+      success: true,
+      article
+    })
+})
 
 module.exports = router;

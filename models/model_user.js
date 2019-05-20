@@ -27,9 +27,6 @@ const userSchema = new Schema({
     birthdate: {
         type: Date
     },
-    address: {
-        type: String
-    },
     typeAcc: {
         type: String,
         default: "normal",

@@ -4,11 +4,15 @@
     <img
       src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1557442043/CentroFit/Store/essential/half_hero_mens_1440x.jpg"
       class="size" alt="">
+      <p class="an">HOMBRES</p>
+      <button class="ma">EXPLORAR</button>
   </div>
   <div class="container__firstlook-box">
     <img
       src="https://res.cloudinary.com/dhy7mnmoe/image/upload/v1557442043/CentroFit/Store/essential/half_hero_womens_1440x.jpg"
       class="size" alt="">
+      <p class="wa" >MUJERES</p>
+      <button class="wo" routerLink="/store/w">EXPLORAR</button>
   </div>
 </section>
 <section class="container__mostview">
@@ -17,9 +21,9 @@
     <p class="dos">LANZAMIENTOS</p>
   </div>
   <div class="container__mostview-box">
-    <div class="container__mostview-box--wrapp"></div>
-    <div class="container__mostview-box--wrapp"></div>
-    <div class="container__mostview-box--wrapp"></div>
+    <a class="container__mostview-box--wrapp" *ngFor="let art of article" routerLink="/store/article" [queryParams]="{i: art._id}">
+      <img src="{{art?.image}}" alt="" class="size">
+    </a>
   </div>
 </section>
 <app-footer></app-footer>

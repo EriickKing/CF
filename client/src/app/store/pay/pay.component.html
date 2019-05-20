@@ -1,0 +1,23 @@
+<app-navbar-s></app-navbar-s>
+
+<section class="container__pay">
+  <h1><span>2.</span> CONFIRMACION</h1>
+  <div class="container__pay-articles">
+    <p class="p">ARTICULOS</p>
+    <div class="container__pay-articles--article" *ngFor="let art of article">
+      <div class="container__pay-articles--article-img">
+        <img src="{{art.image}}" alt="" class="size">
+      </div>
+      <div class="container__pay-articles--article-desc">
+        <p class="name">{{art?.name}}</p>
+        <p class="color">{{art?.color}}</p>
+        <p class="price">${{art?.price}}.00</p>
+      </div>
+    </div>
+  </div>
+  <div class="container__pay-pay">
+      <p>Total: <span>${{sum}}.00</span></p>
+  <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+  </div>
+</section>
+<app-footer></app-footer>

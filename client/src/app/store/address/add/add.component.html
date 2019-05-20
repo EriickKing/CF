@@ -1,0 +1,31 @@
+<app-navbar-s></app-navbar-s>
+<section class="container__add">
+  <h1>AGREGAR DIRECCION</h1>
+  <form [formGroup]="addForm">
+    <p [ngClass]="{invalid: addForm?.controls.name.invalid && addForm?.controls.name.touched}">Nombre Completo</p>
+    <input type="text" class="input color" formControlName="name" maxlength="50">
+    <p [ngClass]="{invalid: addForm?.controls.address.invalid && addForm?.controls.address.touched}">Dirección (calle, número de casa o interior, torre, empresa)</p>
+    <input type="text" class="input color" formControlName="address" maxlength="50">
+    <p [ngClass]="{invalid: addForm?.controls.phone.invalid && (addForm?.controls.phone.dirty || addForm?.controls.phone.touched)}">Telefono</p>
+    <input type="text" class="input color dis" formControlName="phone" minlength="10" maxlength="10" (keypress)="numberOnly($event)">
+    <p [ngClass]="{invalid: addForm?.controls.postal.invalid && (addForm?.controls.postal.dirty || addForm?.controls.postal.touched)}">Codigo Postal</p>
+    <input type="text" class="input color dis" formControlName="postal" minlength="5" maxlength="5" (keypress)="numberOnly($event)">
+    <p *ngIf="valPostal" class="postal">AUN NO LLEGAMOS A TU DOMICILIO.</p>
+    <!-- <p *ngIf="valPostal">Codigo Postal Verificado</p> -->
+    <button class="submit input verf" (click)="postal()" [ngClass]="{verf2: valPostal}">Verificar</button>
+    <p [ngClass]="{invalid: addForm?.controls.suburb.invalid && (addForm?.controls.suburb.dirty || addForm?.controls.suburb.touched)}">Colonia</p>
+    <select class="input color dis" formControlName="suburb">
+      <option *ngFor="let sub of suburb" [value]="sub">{{sub}}</option>
+    </select>
+    <p>Estado</p>
+    <input type="text" [attr.disabled]="sia" class="input color dis" formControlName="state" maxlength="50">
+    <p>Municipio</p>
+    <input type="text" [attr.disabled]="sia" class="input color dis" formControlName="municip" maxlength="50">
+    <p>Ciudad</p>
+    <input type="text" [attr.disabled]="sia" class="input color dis" formControlName="city" maxlength="50">
+
+    <button type="submit" class="submit input" [disabled]="addForm.invalid" (click)="add()">Agregar</button>
+  </form>
+  <!-- <p style="color: white; font-size: 2rem;">{{addform.invalid}}</p> -->
+</section>
+<app-footer></app-footer>

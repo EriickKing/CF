@@ -1,0 +1,73 @@
+@import "../../../../sass/mixin";
+@import "../../../../sass/variable";
+@import "../../../../sass/components/inputAdmin";
+
+.container__add {
+  @include hxw(100%, 100%);
+  position: relative;
+  display: flex;
+
+  h1 {
+    position: absolute;
+    color: white;
+    font-size: 3.5rem;
+    margin: 2rem;
+  }
+
+  form {
+    margin-top: 6%;
+    margin-left: 15%;
+    margin-bottom: 4.5%;
+    @include hxw(100%, 30%);
+    // background: red;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .invalid {
+      color: red;
+    }
+    p {
+      font-size: 1.5rem;
+      color: white;
+    }
+    .postal {
+      margin-bottom: 1rem;
+      // margin-left: 1rem;
+      color: $color__cf-green;
+    }
+    input[type=text] {
+      margin: 1rem;
+    }
+
+    select{
+      margin: 1rem;
+      outline: none;
+    }
+
+    .dis {
+      width: 50%;
+    }
+
+    .submit {
+      width: 60%;
+    }
+
+    .verf {
+      position: absolute;
+      width: 30%;
+      left: 60%;
+      top: 39.8%;
+      background: $color__cf-green;
+    }
+    .verf2 {
+      top: 38%;
+    }
+
+  }
+}
+
+
+// .invalid {
+//   border: 1px solid red;
+// }
+

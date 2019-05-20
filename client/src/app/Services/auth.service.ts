@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from "../../environments/environment";
-// import { environment } from "../../environments/environment.prod";
+// import { environment } from "../../environments/environment";
+import { environment } from "../../environments/environment.prod";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { map } from "rxjs/operators";
@@ -55,11 +55,18 @@ export class LogService {
   }
 
   logoutStore() {
-    localStorage.setItem("config_user", "");
+    localStorage.removeItem("config_user_store")
+    localStorage.removeItem("config_id")
     localStorage.setItem("config_login" , "false")
   }
 
   cog_log() {
     return localStorage.getItem("config_login");
+  }
+
+  oneUser(user) {
+    return this.http
+      .post(this.domain + "/oneuser", user)
+      .pipe(map((res: any) => res));
   }
 }

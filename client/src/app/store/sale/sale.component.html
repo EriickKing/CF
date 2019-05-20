@@ -1,0 +1,20 @@
+<app-navbar-s></app-navbar-s>
+
+<section class="container__address">
+  <h1><span>1.</span> TUS DIRECCIONES</h1>
+  <p class="desc">Selecciona la direccion correcta a donde se enviara tu compra.</p>
+  <div class="container__address-wrapp">
+    <button class="another" *ngFor="let addr of address">
+      <p><i class="fas fa-user"></i>{{addr.name}}</p>
+      <p class="font"><i class="fas fa-map-marker-alt"></i>{{addr.address}}</p>
+      <p><i class="fas fa-map-marker-alt"></i>{{addr.suburb}}</p>
+      <p class="font"><i class="fas fa-map-marker-alt"></i>{{addr.postal}}</p>
+      <p class="font"><i class="fas fa-phone"></i>{{addr.phone}}</p>
+      <p><i class="fas fa-city"></i>{{addr.city}}</p>
+      <button class="use button" (click)="use(addr._id)" routerLink="/store/pay">Usar</button>
+      <button class="delete button" (click)="delete(addr._id)">Eliminar</button>
+    </button>
+    <button class="more" routerLink="/store/address/add"><i class="fas fa-plus fa-5x"></i></button>
+  </div>
+</section>
+<app-footer></app-footer>

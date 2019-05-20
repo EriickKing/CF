@@ -6,6 +6,7 @@ const installations = require("../routes/admin/route_installation");
 const hours = require("../routes/admin/route_hour");
 const deli = require("../routes/store/route_deli");
 const article = require("../routes/store/route_article");
+const address = require("../routes/store/route_address");
 module.exports = function(app) {
     app.use(user);
     app.use("/news", news)
@@ -17,4 +18,5 @@ module.exports = function(app) {
     //STORE
     app.use("/delivery", deli);
     app.use("/article", article);
+    app.use("/address", address);
 };

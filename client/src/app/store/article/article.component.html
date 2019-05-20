@@ -1,4 +1,5 @@
 <app-navbar-s></app-navbar-s>
+<a routerLink="/store">INICIO</a> <span> - </span> <a routerLink="/store/w">MUJER</a> <span> - </span> <a class="nohover">{{article?.name}}</a>
 <section class="container__article">
   <div class="container__article-img">
     <img src="{{article?.image}}" alt="" class="size">
@@ -17,3 +18,4 @@
     <input type="button" value="AGREGAR AL CARRITO" (click)="add(article?._id)">
   </div>
 </section>
+<app-footer></app-footer>

@@ -1,62 +1,78 @@
 @import "../../sass/mixin";
 @import "../../sass/variable";
+
 .container__navbar {
-    @include hxw(12vh, 100%);
-    background: $color__cf-backg;
-    border-bottom: .5px solid #4d4d4d;
-    display: flex;
-    justify-content: space-evenly;
-    &-logo {
-        // background: green;
-        @include hxw(100%, 30%);
-        & img {
-            margin-left: 25%;
-            margin-top:4.5%;
-            @include hxw(65%, 18%);
-        }
+  @include hxw(12vh, 100%);
+  background: $color__cf-backg;
+  border-bottom: .5px solid #4d4d4d;
+  display: flex;
+  justify-content: space-evenly;
+
+  &-logo {
+    // background: green;
+    @include hxw(100%, 30%);
+
+    & img {
+      margin-left: 25%;
+      margin-top: 4.5%;
+      @include hxw(65%, 18%);
     }
-    &-section {
-        // background: yellow;
-        @include hxw(100%, 80%);
-        @include flexCenter();
-        & a{
-            text-decoration: none;
-            font-size: 1.3rem;
-            color: $color__cf-white;
-            margin-left: 1rem;
-            transition: .2s;
-            &:hover {
-                color: $color__cf-green;
-            }
-        }
+  }
+
+  &-section {
+    // background: yellow;
+    @include hxw(100%, 80%);
+    @include flexCenter();
+
+    & a {
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: $color__cf-white;
+      margin-left: 1rem;
+      transition: .2s;
+
+      &:hover {
+        color: $color__cf-green;
+      }
     }
-    &-icon {
-        @include flexCenter();
-        & a {
-            margin-left: 1rem;
-            font-size: 2rem;
-            color: $color__cf-white;
-            transition: .2s;
-            &:first-child {
-                margin-right: 2rem;
-            }
-            &:hover {
-                color: $color__cf-green;
-            }
-        }
-        @include hxw(100%, 30%);
-        .len {
-            position: absolute;
-            top: 5%;
-            right: 7%;
-            font-size: 1.6rem;
-            color: $color__cf-diag;
-            font-weight: 600;
-            z-index: 500;
-        }
+
+    .active {
+      color: $color__cf-green;
     }
+  }
+
+  &-icon {
+    @include flexCenter();
+
+    & a {
+      margin-left: 1rem;
+      font-size: 2rem;
+      color: $color__cf-white;
+      transition: .2s;
+
+      &:first-child {
+        margin-right: 2rem;
+      }
+
+      &:hover {
+        color: $color__cf-green;
+      }
+    }
+
+    @include hxw(100%, 30%);
+
+    .len {
+      position: absolute;
+      top: 5%;
+      right: 7%;
+      font-size: 1.6rem;
+      color: $color__cf-diag;
+      font-weight: 600;
+      z-index: 500;
+    }
+  }
 }
 
 .size {
-    @include hxw(100%, 100%);
+  @include hxw(100%, 100%);
 }

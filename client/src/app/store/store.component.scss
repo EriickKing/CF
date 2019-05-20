@@ -6,6 +6,48 @@
   display: flex;
   &-box {
     @include hxw(100%, 50%);
+    position: relative;
+    button {
+
+      padding: 1rem;
+      background: black;
+      color: white;
+      outline: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        transition: .3s;
+        background: #4d4d4d;
+      }
+    }
+    .wo {
+      position: absolute;
+      top: 45%;
+      left: 20%;
+    }
+    .ma {
+      position: absolute;
+      top: 45%;
+      right: 20%;
+    }
+
+    p {
+      color: black;
+      font-size: 2.2rem;
+      font-size: 800;
+    }
+    .an {
+      position: absolute;
+      top: 35%;
+      right: 22%;
+    }
+    .wa {
+      position: absolute;
+      top: 35%;
+      left: 22%;
+    }
   }
 }
 .container__mostview {

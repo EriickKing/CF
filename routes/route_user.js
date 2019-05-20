@@ -8,6 +8,7 @@ const {
 const bcrypt = require("bcryptjs");
 const asset = require("../src/assets");
 const error = require("../src/errors");
+const functions = require("../src/functions");
 router.post("/register", async (req, res) => {
   try {
     var date = new Date().toString().replace(/ \w+-\d+ \(.*\)$/, "");
@@ -36,6 +37,14 @@ router.post("/register", async (req, res) => {
     return err;
   };
 });
+
+router.post("/oneuser", async(req, res) => {
+  const one = await User.findOne({ _id: req.body.id});
+  res.status(200).json({
+    success: true,
+    one
+  })
+})
 
 router.post("/socialregister", async (req, res) => {
   try {
@@ -100,7 +109,7 @@ router.post("/login", async (req, res) => {
   res.status(200).json({
     success: true,
     token: token,
-    user: user.user
+    user: user
   });
 })
 function validate2(req) {
